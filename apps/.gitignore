@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build output
+dist/
+**/dist/
+
+# Environment variables
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Google service account
+google-service-account.json
+**/google-service-account.json
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
