@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { API_SERVER_URL } from "../lib/apiServerClient";
+
+
 
 const AdminDashboard = () => {
   const [leads, setLeads] = useState([]);
@@ -17,14 +20,14 @@ const AdminDashboard = () => {
     image: null,
   });
   useEffect(() => {
-  fetch("http://localhost:3001/contact/leads")
+  fetch(`${API_SERVER_URL}/contact/leads`)
     .then((res) => res.json())
     .then((data) => {
       setLeads(data.leads);
     })
     .catch((err) => console.error(err));
 
-  fetch("http://localhost:3001/blogs")
+  fetch(`${API_SERVER_URL}/blogs`)
     .then((res) => res.json())
     .then((data) => {
       setBlogs(data.blogs);
@@ -35,8 +38,13 @@ const AdminDashboard = () => {
 
   const deleteLead = async (id) => {
   try {
-    await fetch(`http://localhost:3001/contact/leads/${id}`, {
-      method: "DELETE",
+    await fetch(`${API_SERVER_URL}/contact/leads/${id}/status`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ status }),
     });
 
     setLeads((prev) =>
@@ -49,7 +57,7 @@ const AdminDashboard = () => {
 
 const updateStatus = async (id, status) => {
   try {
-    await fetch(`http://localhost:3001/contact/leads/${id}/status`, {
+    await fetch(`${API_SERVER_URL}/contact/leads/${id}/status`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -87,13 +95,15 @@ const createBlog = async () => {
       console.log(pair[0], pair[1]);
     }
 
-    const response = await fetch(
-      "http://localhost:3001/blogs",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
+    const token = localStorage.getItem("token");
+
+const response = await fetch(`${API_SERVER_URL}/blogs`, {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${token}`,
+  },
+  body: formData,
+});
 
     const data = await response.json();
 

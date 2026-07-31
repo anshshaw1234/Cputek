@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { API_SERVER_URL } from "../lib/apiServerClient";
 import { Link } from "react-router-dom";
 
 const BlogsPage = () => {
@@ -7,7 +8,7 @@ const BlogsPage = () => {
   
 
   useEffect(() => {
-    fetch("http://localhost:3001/blogs")
+    fetch(`${API_SERVER_URL}/blogs`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);   // <-- Add this

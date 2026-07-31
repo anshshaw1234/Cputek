@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { API_SERVER_URL } from "../lib/apiServerClient";
 
 export default function BlogDetailPage() {
   const { slug } = useParams();
@@ -14,7 +15,7 @@ export default function BlogDetailPage() {
   const fetchBlog = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3001/blogs/${slug}`
+        `${API_SERVER_URL}/blogs/${slug}`
       );
 
       setBlog(res.data.blog);

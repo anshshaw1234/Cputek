@@ -7,7 +7,7 @@ const BlogAdminPage = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:3001/blogs")
+    fetch(`${API_SERVER_URL}/blogs`)
       .then((res) => res.json())
       .then((data) => setBlogs(data.blogs))
       .catch(console.error);
@@ -23,7 +23,7 @@ const BlogAdminPage = () => {
   if (!confirmDelete) return;
 
   try {
-    await fetch(`http://localhost:3001/blogs/${id}`, {
+    await fetch(`${API_SERVER_URL}/blogs/${id}`, {
       method: "DELETE",
     });
 
@@ -38,7 +38,7 @@ const BlogAdminPage = () => {
 const saveBlog = async () => {
   try {
     const response = await fetch(
-      `http://localhost:3001/blogs/${editingBlog._id}`,
+      `${API_SERVER_URL}/blogs/${editingBlog._id}`,
       {
         method: "PUT",
         headers: {
@@ -71,7 +71,7 @@ const saveBlog = async () => {
 const updateBlogStatus = async (id, status) => {
   try {
     await fetch(
-      `http://localhost:3001/blogs/${id}/status`,
+      `${API_SERVER_URL}/blogs/${id}/status`,
       {
         method: "PATCH",
         headers: {
