@@ -45,11 +45,11 @@ const BlogsPage = () => {
   </p>
 
   <Link
-    to={`/blogs/${blog.slug}`}
-    className="inline-block mt-2 text-blue-600 font-semibold hover:text-blue-800"
-  >
-    Read More →
-  </Link>
+  to={`/blogs/${blog._id}`}
+  className="inline-block mt-2 text-blue-600 font-semibold hover:text-blue-800"
+>
+  Read More →
+</Link>
 </div>
           </div>
         ))}

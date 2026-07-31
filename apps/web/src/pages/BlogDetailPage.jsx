@@ -4,18 +4,18 @@ import axios from "axios";
 import { API_SERVER_URL } from "../lib/apiServerClient";
 
 export default function BlogDetailPage() {
-  const { slug } = useParams();
+  const { id } = useParams();
 
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
     fetchBlog();
-  }, [slug]);
+  }, [id]);
 
   const fetchBlog = async () => {
     try {
       const res = await axios.get(
-        `${API_SERVER_URL}/blogs/${slug}`
+        `${API_SERVER_URL}/blogs/${id}`
       );
 
       setBlog(res.data.blog);

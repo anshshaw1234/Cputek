@@ -50,7 +50,7 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><HomePage /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
-        <Route path="/services/hr/:slug" element={<PageWrapper><HRServiceDetailPage /></PageWrapper>} />
+        {/* <Route path="/services/hr/:slug" element={<PageWrapper><HRServiceDetailPage /></PageWrapper>} /> */}
         <Route path="/services/:serviceId" element={<PageWrapper><ServiceDetailPage /></PageWrapper>} />
         <Route path="/careers" element={<PageWrapper><CareersPage /></PageWrapper>} />
         <Route path="/contact" element={<PageWrapper><ContactPage /></PageWrapper>} />
@@ -64,7 +64,7 @@ const AnimatedRoutes = () => {
   }
 />
 <Route
-  path="/blogs/:slug"
+  path="/blogs/:id"
   element={
     <PageWrapper>
       <BlogDetailPage />

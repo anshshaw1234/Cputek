@@ -7,27 +7,7 @@ import streamifier from "streamifier";
 import authMiddleware from "../middleware/auth.js";
 const router = express.Router();
 
-router.get("/:slug", async (req, res) => {
-  console.log("Slug received:", req.params.slug);
 
-  const blog = await Blog.findOne({
-    slug: req.params.slug,
-  });
-
-  console.log(blog);
-
-  if (!blog) {
-    return res.status(404).json({
-      success: false,
-      message: "Blog not found",
-    });
-  }
-
-  res.json({
-    success: true,
-    blog,
-  });
-});
 
 router.get("/test", (req, res) => {
   res.json({
@@ -44,7 +24,6 @@ router.post(
   try {
     const {
       title,
-      slug,
       excerpt,
       content,
       author,
@@ -73,11 +52,6 @@ router.post(
 
     const blog = await Blog.create({
       title,
-      slug: (slug || title)
-  .trim()
-  .toLowerCase()
-  .replace(/\s+/g, "-")
-  .replace(/[^a-z0-9-]/g, ""),
       excerpt,
       content,
       author,
@@ -119,12 +93,11 @@ router.get("/", async (req, res) => {
 });
 
 
-// Get Single Blog by Slug
-router.get("/:slug", async (req, res) => {
+
+// Get Single Blog by ID
+router.get("/:id", async (req, res) => {
   try {
-    const blog = await Blog.findOne({
-      slug: req.params.slug,
-    });
+    const blog = await Blog.findById(req.params.id);
 
     if (!blog) {
       return res.status(404).json({
@@ -137,7 +110,6 @@ router.get("/:slug", async (req, res) => {
       success: true,
       blog,
     });
-
   } catch (error) {
     res.status(500).json({
       success: false,
@@ -145,6 +117,8 @@ router.get("/:slug", async (req, res) => {
     });
   }
 });
+// Get Single Blog by Slug
+
 
 
 router.put("/:id", authMiddleware, async (req, res) => {

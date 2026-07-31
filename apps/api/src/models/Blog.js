@@ -7,11 +7,7 @@ const blogSchema = new mongoose.Schema(
       required: true,
     },
 
-    slug: {
-      type: String,
-      required: true,
-      unique: true,
-    },
+
 
     author: {
       type: String,

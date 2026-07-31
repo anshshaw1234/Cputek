@@ -13,7 +13,6 @@ const AdminDashboard = () => {
 
   const [blogForm, setBlogForm] = useState({
     title: "",
-    slug: "",
     excerpt: "",
     content: "",
     author: "CPUtek",
@@ -81,7 +80,6 @@ const createBlog = async () => {
     const formData = new FormData();
 
     formData.append("title", blogForm.title);
-    formData.append("slug", blogForm.slug);
     formData.append("excerpt", blogForm.excerpt);
     formData.append("content", blogForm.content);
     formData.append("author", blogForm.author);
@@ -112,7 +110,6 @@ const response = await fetch(`${API_SERVER_URL}/blogs`, {
 
       setBlogForm({
         title: "",
-        slug: "",
         excerpt: "",
         content: "",
         author: "CPUtek",
@@ -298,18 +295,7 @@ const convertedLeads = leads.filter(
       className="border p-2 rounded bg-white text-black"
     />
 
-    <input
-      type="text"
-      placeholder="Slug"
-      value={blogForm.slug}
-      onChange={(e) =>
-        setBlogForm({
-          ...blogForm,
-          slug: e.target.value,
-        })
-      }
-      className="border p-2 rounded bg-white text-black"
-    />
+   
 
     <input
       type="text"
