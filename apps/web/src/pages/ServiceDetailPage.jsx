@@ -98,7 +98,7 @@ const ServiceDetailPage = () => {
         <ProductionApproachSection approach={service.productionApproach} />
 
         {/* Portfolio Section */}
-        {service.portfolioItems && service.portfolioItems.length > 0 && (
+        {/* {service.portfolioItems && service.portfolioItems.length > 0 && (
           <section className="py-24 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent" />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -126,7 +126,7 @@ const ServiceDetailPage = () => {
               </ScrollRevealAnimation>
             </div>
           </section>
-        )}
+        )} */}
 
         {/* FAQ Section */}
         <FAQSection faqs={service.faqs} />

@@ -54,7 +54,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-6 tracking-wide">Quick Links</h3>
             <ul className="space-y-4">
-              {['Home', 'About', 'Services', 'Products', 'Careers', 'Contact'].map((item) => (
+              {['Home', 'About', 'Services',  'Careers', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link 
                     to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
@@ -71,14 +71,14 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-foreground mb-6 tracking-wide">Services</h3>
             <ul className="space-y-4">
               {[
-                { name: 'Video Services', path: '/services/explainer-videos' },
-                {name: 'AI-Powered Video & Audio', path: '/services/text-to-video-generation' },
-                {name: 'eLearning & Training', path: '/services/ai-avatar-presenter-videos' },
-                {name: 'Digital Marketing', path: '/services/instructor-led-talking-head' },
-                {name: 'Digital Media', path: '/services/brand-strategy-identity' },
-                {name: 'SEO Strategy & Keyword Research', path: '/services/social-media-management' },
-                { name: 'Manpower Outsourcing', path: '/services/on-page-seo-optimization' },
-                { name: 'Human Resources (HR) Services', path: '/services/dedicated-resource-hiring' }
+                { name: 'AI Solutions & Enterprise Automation', path: '/services/Explore' },
+                {name: 'eLearning & Corporate Training', path: '/services/text-to-video-generation' },
+                {name: 'Animation & Explainer Videos', path: '/services/ai-avatar-presenter-videos' },
+                {name: 'Enterprise Software Development', path: '/services/instructor-led-talking-head' },
+                {name: 'Creative Design & Brand Communication', path: '/services/brand-strategy-identity' },
+                {name: 'Human Resources ad Compliance', path: '/services/social-media-management' },
+                {/* { name: 'Manpower Outsourcing', path: '/services/on-page-seo-optimization' },
+                { name: 'Human Resources (HR) Services', path: '/services/dedicated-resource-hiring' } */}
               ].map((item) => (
                 <li key={item.name}>
                   <Link 

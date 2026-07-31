@@ -65,94 +65,94 @@ const Header = () => {
   const serviceCategories = [
     {
       id: 'video-services',
-      name: 'Video Services',
+      name: 'AI Solutions & Enterprise Automationices',
       items: [
-        { name: 'Explainer Videos', icon: <Video className="w-4 h-4" />, path: '/services/explainer-videos' },
-        { name: 'Promotional & Marketing Videos', icon: <Megaphone className="w-4 h-4" />, path: '/services/promotional-marketing-videos' },
-        { name: 'Corporate Videos & Company Profiles', icon: <Briefcase className="w-4 h-4" />, path: '/services/corporate-videos-company-profiles' },
-        { name: 'Motion Graphics & VFX', icon: <Wand2 className="w-4 h-4" />, path: '/services/motion-graphics-vfx' },
-        { name: 'Storyboarding & Script-to-Video', icon: <PenTool className="w-4 h-4" />, path: '/services/storyboarding-script-to-video' },
-        { name: 'Custom Animation & Specialized Videos', icon: <Film className="w-4 h-4" />, path: '/services/custom-animation-specialized-videos' },
-        { name: '2D & 3D Story Videos', icon: <Layers className="w-4 h-4" />, path: '/services/2d-3d-story-videos' },
+        { name: 'Explore', icon: <Video className="w-4 h-4" />, path: '/services/Explore' },
+        // { name: 'Promotional & Marketing Videos', icon: <Megaphone className="w-4 h-4" />, path: '/services/promotional-marketing-videos' },
+        // { name: 'Corporate Videos & Company Profiles', icon: <Briefcase className="w-4 h-4" />, path: '/services/corporate-videos-company-profiles' },
+        // // { name: 'Motion Graphics & VFX', icon: <Wand2 className="w-4 h-4" />, path: '/services/motion-graphics-vfx' },
+        // { name: 'Storyboarding & Script-to-Video', icon: <PenTool className="w-4 h-4" />, path: '/services/storyboarding-script-to-video' },
+        // { name: 'Custom Animation & Specialized Videos', icon: <Film className="w-4 h-4" />, path: '/services/custom-animation-specialized-videos' },
+        // { name: '2D & 3D Story Videos', icon: <Layers className="w-4 h-4" />, path: '/services/2d-3d-story-videos' },
       ]
     },
     {
       id: 'ai-video-audio',
-      name: 'AI-Powered Video & Audio',
+      name: 'eLearning & Corporate Training',
       items: [
-        { name: 'Text-to-Video Generation', icon: <FileText className="w-4 h-4" />, path: '/services/text-to-video-generation' },
-        { name: 'AI Avatar & Presenter Videos', icon: <UserCircle className="w-4 h-4" />, path: '/services/ai-avatar-presenter-videos' },
-        { name: 'AI Cinematic & 3D Video', icon: <Clapperboard className="w-4 h-4" />, path: '/services/ai-cinematic-3d-video' },
-        { name: 'AI Voiceover & Audio', icon: <Mic className="w-4 h-4" />, path: '/services/ai-voiceover-audio' },
+        { name: 'Explore', icon: <FileText className="w-4 h-4" />, path: '/services/text-to-video-generation' },
+        // { name: 'AI Avatar & Presenter Videos', icon: <UserCircle className="w-4 h-4" />, path: '/services/ai-avatar-presenter-videos' },
+        // { name: 'AI Cinematic & 3D Video', icon: <Clapperboard className="w-4 h-4" />, path: '/services/ai-cinematic-3d-video' },
+        // { name: 'AI Voiceover & Audio', icon: <Mic className="w-4 h-4" />, path: '/services/ai-voiceover-audio' },
       ]
     },
     {
       id: 'elearning-training',
-      name: 'eLearning & Training',
+      name: 'Animation & Explainer Videos',
       items: [
-        { name: 'Instructor-Led / Talking Head', icon: <Presentation className="w-4 h-4" />, path: '/services/instructor-led-talking-head' },
-        { name: 'Screencast & Software Training', icon: <MonitorPlay className="w-4 h-4" />, path: '/services/screencast-software-training' },
-        { name: 'Animated eLearning Explainers', icon: <PlayCircle className="w-4 h-4" />, path: '/services/animated-elearning-explainers' },
+        { name: 'Explore', icon: <Presentation className="w-4 h-4" />, path: '/services/instructor-led-talking-head' },
+        // { name: 'Screencast & Software Training', icon: <MonitorPlay className="w-4 h-4" />, path: '/services/screencast-software-training' },
+        // { name: 'Animated eLearning Explainers', icon: <PlayCircle className="w-4 h-4" />, path: '/services/animated-elearning-explainers' },
       ]
     },
     {
       id: 'digital-marketing',
-      name: 'Digital Marketing',
+      name: 'Enterprise Software Development',
       items: [
-        { name: 'Brand Strategy & Identity', icon: <Target className="w-4 h-4" />, path: '/services/brand-strategy-identity' },
-        { name: 'Visual Branding & Design', icon: <Palette className="w-4 h-4" />, path: '/services/visual-branding-design' },
-        { name: 'Digital Branding & Social Presence', icon: <Globe className="w-4 h-4" />, path: '/services/digital-branding-social-presence' },
-        { name: 'Employer & Corporate Branding', icon: <Award className="w-4 h-4" />, path: '/services/employer-corporate-branding' },
-        { name: 'AI-Powered Branding', icon: <Cpu className="w-4 h-4" />, path: '/services/ai-powered-branding' },
-        { name: 'Corporate & Business Websites', icon: <Layout className="w-4 h-4" />, path: '/services/corporate-business-websites' },
-        { name: 'UI/UX Design & Prototyping', icon: <Smartphone className="w-4 h-4" />, path: '/services/ui-ux-design-prototyping' },
-        { name: 'Landing Pages & Conversion Funnels', icon: <TrendingUp className="w-4 h-4" />, path: '/services/landing-pages-conversion-funnels' },
+        { name: 'Explore', icon: <Target className="w-4 h-4" />, path: '/services/brand-strategy-identity' },
+        // { name: 'Visual Branding & Design', icon: <Palette className="w-4 h-4" />, path: '/services/visual-branding-design' },
+        // { name: 'Digital Branding & Social Presence', icon: <Globe className="w-4 h-4" />, path: '/services/digital-branding-social-presence' },
+        // { name: 'Employer & Corporate Branding', icon: <Award className="w-4 h-4" />, path: '/services/employer-corporate-branding' },
+        // { name: 'AI-Powered Branding', icon: <Cpu className="w-4 h-4" />, path: '/services/ai-powered-branding' },
+        // { name: 'Corporate & Business Websites', icon: <Layout className="w-4 h-4" />, path: '/services/corporate-business-websites' },
+        // { name: 'UI/UX Design & Prototyping', icon: <Smartphone className="w-4 h-4" />, path: '/services/ui-ux-design-prototyping' },
+        // { name: 'Landing Pages & Conversion Funnels', icon: <TrendingUp className="w-4 h-4" />, path: '/services/landing-pages-conversion-funnels' },
       ]
     },
     {
       id: 'digital-media',
-      name: 'Digital Media',
+      name: 'Creative Design & Brand Communication',
       items: [
-        { name: 'Social Media Management', icon: <Share2 className="w-4 h-4" />, path: '/services/social-media-management' },
-        { name: 'Social Media Creatives & Content Production', icon: <Image className="w-4 h-4" />, path: '/services/social-media-creatives-content-production' },
-        { name: 'Influencer & Creator Marketing', icon: <Users className="w-4 h-4" />, path: '/services/influencer-creator-marketing' },
-        { name: 'Content Strategy & Brand Communication', icon: <MessageSquare className="w-4 h-4" />, path: '/services/content-strategy-brand-communication' },
-        { name: 'AI-Driven Digital Marketing', icon: <Zap className="w-4 h-4" />, path: '/services/ai-driven-digital-marketing' },
-        { name: 'ROI Driver Marketing', icon: <BarChart className="w-4 h-4" />, path: '/services/roi-driver-marketing' },
+        { name: 'Explore', icon: <Share2 className="w-4 h-4" />, path: '/services/social-media-management' },
+        // { name: 'Social Media Creatives & Content Production', icon: <Image className="w-4 h-4" />, path: '/services/social-media-creatives-content-production' },
+        // { name: 'Influencer & Creator Marketing', icon: <Users className="w-4 h-4" />, path: '/services/influencer-creator-marketing' },
+        // { name: 'Content Strategy & Brand Communication', icon: <MessageSquare className="w-4 h-4" />, path: '/services/content-strategy-brand-communication' },
+        // { name: 'AI-Driven Digital Marketing', icon: <Zap className="w-4 h-4" />, path: '/services/ai-driven-digital-marketing' },
+        // { name: 'ROI Driver Marketing', icon: <BarChart className="w-4 h-4" />, path: '/services/roi-driver-marketing' },
       ]
     },
     {
       id: 'seo-strategy',
-      name: 'SEO Strategy & Keyword Research',
+      name: 'Human Resources ad Compliance',
       items: [
-        { name: 'On-Page SEO Optimization', icon: <Search className="w-4 h-4" />, path: '/services/on-page-seo-optimization' },
-        { name: 'Technical SEO', icon: <Settings className="w-4 h-4" />, path: '/services/technical-seo' },
-        { name: 'Content SEO & Blogging', icon: <Edit3 className="w-4 h-4" />, path: '/services/content-seo-blogging' },
-        { name: 'Off-Page SEO & Link Building', icon: <LinkIcon className="w-4 h-4" />, path: '/services/off-page-seo-link-building' },
-        { name: 'Local SEO', icon: <MapPin className="w-4 h-4" />, path: '/services/local-seo' },
-        { name: 'SEO Analytics & Reporting', icon: <LineChart className="w-4 h-4" />, path: '/services/seo-analytics-reporting' },
-        { name: 'AI-Powered SEO', icon: <Cpu className="w-4 h-4" />, path: '/services/ai-powered-seo' },
-        { name: 'Performance Marketing & Paid Ads', icon: <MousePointer2 className="w-4 h-4" />, path: '/services/performance-marketing-paid-ads' },
+        { name: 'Explore', icon: <Search className="w-4 h-4" />, path: '/services/on-page-seo-optimization' },
+        // { name: 'Technical SEO', icon: <Settings className="w-4 h-4" />, path: '/services/technical-seo' },
+        // { name: 'Content SEO & Blogging', icon: <Edit3 className="w-4 h-4" />, path: '/services/content-seo-blogging' },
+        // { name: 'Off-Page SEO & Link Building', icon: <LinkIcon className="w-4 h-4" />, path: '/services/off-page-seo-link-building' },
+        // { name: 'Local SEO', icon: <MapPin className="w-4 h-4" />, path: '/services/local-seo' },
+        // { name: 'SEO Analytics & Reporting', icon: <LineChart className="w-4 h-4" />, path: '/services/seo-analytics-reporting' },
+        // { name: 'AI-Powered SEO', icon: <Cpu className="w-4 h-4" />, path: '/services/ai-powered-seo' },
+        // { name: 'Performance Marketing & Paid Ads', icon: <MousePointer2 className="w-4 h-4" />, path: '/services/performance-marketing-paid-ads' },
       ]
     },
-    {
-      id: 'manpower-outsourcing',
-      name: 'Manpower Outsourcing',
-      items: [
-        { name: 'Dedicated Resource Hiring', icon: <UserPlus className="w-4 h-4" />, path: '/services/dedicated-resource-hiring' },
-        { name: 'Video Production & Animation Resources', icon: <Video className="w-4 h-4" />, path: '/services/video-production-animation-resources' },
-        { name: 'Web & App Development Resources', icon: <Code className="w-4 h-4" />, path: '/services/web-app-development-resources' },
-        { name: 'Digital Marketing & SEO Experts', icon: <TrendingUp className="w-4 h-4" />, path: '/services/digital-marketing-seo-experts' },
-        { name: 'eLearning & Instructional Design Experts', icon: <BookOpen className="w-4 h-4" />, path: '/services/elearning-instructional-design-experts' },
-        { name: 'AI & Automation Specialists', icon: <Cpu className="w-4 h-4" />, path: '/services/ai-automation-specialists' },
-        { name: 'Branding & Creative Team', icon: <Palette className="w-4 h-4" />, path: '/services/branding-creative-team' },
-      ]
-    },
-    {
-      id: 'hr-services',
-      name: 'Human Resources (HR) Services',
-      items: hrServiceItems
-    }
+    // {
+    //   id: 'manpower-outsourcing',
+    //   name: 'Manpower Outsourcing',
+    //   items: [
+    //     { name: 'Dedicated Resource Hiring', icon: <UserPlus className="w-4 h-4" />, path: '/services/dedicated-resource-hiring' },
+    //     { name: 'Video Production & Animation Resources', icon: <Video className="w-4 h-4" />, path: '/services/video-production-animation-resources' },
+    //     { name: 'Web & App Development Resources', icon: <Code className="w-4 h-4" />, path: '/services/web-app-development-resources' },
+    //     { name: 'Digital Marketing & SEO Experts', icon: <TrendingUp className="w-4 h-4" />, path: '/services/digital-marketing-seo-experts' },
+    //     { name: 'eLearning & Instructional Design Experts', icon: <BookOpen className="w-4 h-4" />, path: '/services/elearning-instructional-design-experts' },
+    //     { name: 'AI & Automation Specialists', icon: <Cpu className="w-4 h-4" />, path: '/services/ai-automation-specialists' },
+    //     { name: 'Branding & Creative Team', icon: <Palette className="w-4 h-4" />, path: '/services/branding-creative-team' },
+    //   ]
+    // },
+    // {
+    //   id: 'hr-services',
+    //   name: 'Human Resources (HR) Services',
+    //   items: hrServiceItems
+    // }
   ];
 
   const productsData = [
@@ -224,7 +224,7 @@ const Header = () => {
               </button>
             </div>
 
-            <div 
+            {/* <div 
               className="relative py-4"
               onMouseEnter={() => { setIsProductsOpen(true); setIsServicesOpen(false); }}
               onMouseLeave={() => setIsProductsOpen(false)}
@@ -235,11 +235,20 @@ const Header = () => {
                 Products
                 <ChevronDown className={`w-4 h-4 smooth-transition ${isProductsOpen ? 'rotate-180' : ''}`} />
               </button>
-            </div>
+            </div> */}
 
-            <Link to="/careers" className={`text-sm font-medium smooth-transition ${isActive('/careers') ? 'text-primary' : 'text-foreground hover:text-primary'}`}>
+<div className="relative py-4"
+             >
+
+
+  <Link to="/careers" className={`text-sm font-medium smooth-transition ${isActive('/careers') ? 'text-primary' : 'text-foreground hover:text-primary'}`}>
               Careers
             </Link>
+            
+</div>
+            {/* <Link to="/careers" className={`text-sm font-medium smooth-transition ${isActive('/careers') ? 'text-primary' : 'text-foreground hover:text-primary'}`}>
+              Careers
+            </Link> */}
             
 
             <Link
@@ -451,7 +460,7 @@ const Header = () => {
               </div>
 
               {/* Products Mobile Accordion */}
-              <div className="space-y-1">
+              {/* <div className="space-y-1">
                 <button 
                   onClick={() => { setIsProductsOpen(!isProductsOpen); setIsServicesOpen(false); }}
                   className="w-full flex items-center justify-between px-4 py-3 text-lg font-medium text-foreground hover:text-primary hover:bg-white/5 rounded-xl smooth-transition min-h-[44px]"
@@ -492,7 +501,7 @@ const Header = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </div> */}
 
               <Link
   to="/blogs"
