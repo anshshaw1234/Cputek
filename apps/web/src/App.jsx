@@ -15,6 +15,7 @@ import BlogsPage from "./pages/BlogsPage";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import BlogDetailPage from "./pages/BlogDetailPage";
+import IndustryDetailPage from "./pages/IndustryDetailPage";
 
 const PageWrapper = ({ children }) => {
   return (
@@ -62,6 +63,11 @@ const AnimatedRoutes = () => {
       <BlogsPage />
     </PageWrapper>
   }
+/>
+
+<Route
+  path="/industries/:industryId"
+  element={<IndustryDetailPage />}
 />
 <Route
   path="/blogs/:id"

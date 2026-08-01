@@ -10,8 +10,11 @@ import ProductionApproachSection from '@/components/ProductionApproachSection.js
 import FAQSection from '@/components/FAQSection.jsx';
 import { servicesData } from '@/data/services.js';
 
+import portfolioData from "../data/portfolioData";
+
 const ServiceDetailPage = () => {
   const { serviceId } = useParams();
+  const portfolio = portfolioData[serviceId] || [];
   const navigate = useNavigate();
 
   const service = servicesData.find(s => s.slug === serviceId);
@@ -131,6 +134,29 @@ const ServiceDetailPage = () => {
         {/* FAQ Section */}
         <FAQSection faqs={service.faqs} />
 
+        {/* Portfolio */}
+
+        <section className="max-w-7xl mx-auto px-6 py-20">
+  <h2 className="text-4xl font-bold text-center text-white mb-10">
+    Our Portfolio
+  </h2>
+
+  <div className="grid md:grid-cols-2 gap-8">
+    {portfolio.map((image, index) => (
+      <div
+        key={index}
+        className="overflow-hidden rounded-2xl shadow-lg"
+      >
+        <img
+          src={image}
+          alt={`Portfolio ${index + 1}`}
+          className="w-full h-[350px] object-cover hover:scale-105 transition duration-500"
+        />
+      </div>
+    ))}
+  </div>
+</section>
+
         {/* CTA Section */}
         <section className="py-24 relative">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -187,6 +213,9 @@ const ServiceDetailPage = () => {
           </section>
         )}
       </main>
+
+
+      
 
       <Footer />
     </div>
