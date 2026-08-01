@@ -7,15 +7,24 @@ const BlogsPage = () => {
 
   
 
-  useEffect(() => {
-    fetch(`${API_SERVER_URL}/blogs`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);   // <-- Add this
-        setBlogs(data.blogs);
-      })
-      .catch(console.error);
-  }, []);
+  console.log("API_SERVER_URL:", API_SERVER_URL);
+
+useEffect(() => {
+  console.log("Fetching:", `${API_SERVER_URL}/blogs`);
+
+  fetch(`${API_SERVER_URL}/blogs`)
+    .then((res) => {
+      console.log("Status:", res.status);
+      return res.json();
+    })
+    .then((data) => {
+      console.log("Data:", data);
+      setBlogs(data.blogs || []);
+    })
+    .catch((err) => {
+      console.error("Fetch Error:", err);
+    });
+}, []);
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-28">
