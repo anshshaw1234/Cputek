@@ -4,7 +4,9 @@ export const sendContactEmail = async (formData) => {
   console.log("EMAIL USER IN SERVICE:", process.env.EMAIL_USER);
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.hostinger.com",
+    port: 465,
+    secure: true, // true for port 465
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
