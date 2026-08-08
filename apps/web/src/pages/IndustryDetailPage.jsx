@@ -75,7 +75,7 @@ const IndustryDetailPage = () => {
         </section>
 
         {/* Industry Overview Section */}
-        <section className="py-16 relative">
+        {/* <section className="py-16 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ScrollRevealAnimation>
               <h2 className="text-3xl font-bold text-foreground mb-10">Industry Overview</h2>
@@ -86,7 +86,7 @@ const IndustryDetailPage = () => {
               </div>
             </ScrollRevealAnimation>
           </div>
-        </section>
+        </section> */}
 
         {/* Key Features Section */}
         <section className="py-16 relative">
@@ -115,7 +115,7 @@ const IndustryDetailPage = () => {
         <section className="py-16 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ScrollRevealAnimation>
-              <h2 className="text-3xl font-bold text-foreground mb-10">Our Production Approach</h2>
+              {/* <h2 className="text-3xl font-bold text-foreground mb-10">Our Production Approach</h2> */}
             </ScrollRevealAnimation>
 
             <ScrollRevealAnimation delay={0.1}>
@@ -128,7 +128,7 @@ const IndustryDetailPage = () => {
         <section className="py-16 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ScrollRevealAnimation>
-              <h2 className="text-3xl font-bold text-foreground mb-10">Frequently Asked Questions</h2>
+              {/* <h2 className="text-3xl font-bold text-foreground mb-10">Frequently Asked Questions</h2> */}
             </ScrollRevealAnimation>
 
             <ScrollRevealAnimation delay={0.1}>
