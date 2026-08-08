@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { flushSync } from 'react-dom';
 import { Helmet } from 'react-helmet';
 import { MapPin, Mail, Phone, Facebook, Linkedin, Youtube } from 'lucide-react';
 import { toast } from 'sonner';
@@ -18,6 +19,11 @@ const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Guard against a second click sneaking in before the UI has a
+    // chance to re-render into the "Sending..." state.
+    if (isSubmitting) return;
+
     if (!formData.name || !formData.email || !formData.message) {
       toast.error('Please fill in all required fields');
       return;
@@ -26,9 +32,17 @@ const ContactPage = () => {
       toast.error('Please enter a valid email address');
       return;
     }
-    
-    setIsSubmitting(true);
-    
+
+    // flushSync forces React to apply this state update and paint the
+    // "Sending..." button synchronously, right now, instead of letting
+    // it get batched together with (and effectively delayed until
+    // after) the network request that follows. This is what makes the
+    // button change label the instant it's clicked, while the actual
+    // request still happens in the background.
+    flushSync(() => {
+      setIsSubmitting(true);
+    });
+
     try {
       const response = await apiServerClient.fetch('/contact/send-email', {
         method: 'POST',
@@ -45,7 +59,7 @@ const ContactPage = () => {
       toast.success(data.message, {
         duration: 3000,
       });
-      
+
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
     } catch (error) {
       console.error('Contact form error:', error);
@@ -224,7 +238,7 @@ const ContactPage = () => {
                     </div>
 
                     <GlowButton type="submit" disabled={isSubmitting} className="w-full">
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                      {isSubmitting ? 'Sent' : 'Send Message'}
                     </GlowButton>
                   </form>
                 </div>
