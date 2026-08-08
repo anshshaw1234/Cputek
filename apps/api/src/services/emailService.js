@@ -7,8 +7,9 @@ export const sendContactEmail = async (formData) => {
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST || "smtp.hostinger.com",
-    port: Number(process.env.SMTP_PORT) || 465,
-    secure: true,
+    port: Number(process.env.SMTP_PORT) || 587,
+  
+    secure: false,
   
     family: 4,
   
