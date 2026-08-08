@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { flushSync } from 'react-dom';
+
 import { Helmet } from 'react-helmet';
 import { MapPin, Mail, Phone, Facebook, Linkedin, Youtube } from 'lucide-react';
 import { toast } from 'sonner';
@@ -12,6 +12,7 @@ import apiServerClient from '@/lib/apiServerClient.js';
 const ContactPage = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+const [isSent, setIsSent] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,53 +20,52 @@ const ContactPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Guard against a second click sneaking in before the UI has a
-    // chance to re-render into the "Sending..." state.
+  
     if (isSubmitting) return;
-
+  
     if (!formData.name || !formData.email || !formData.message) {
-      toast.error('Please fill in all required fields');
+      toast.error("Please fill in all required fields");
       return;
     }
+  
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      toast.error('Please enter a valid email address');
+      toast.error("Please enter a valid email address");
       return;
     }
-
-    // flushSync forces React to apply this state update and paint the
-    // "Sending..." button synchronously, right now, instead of letting
-    // it get batched together with (and effectively delayed until
-    // after) the network request that follows. This is what makes the
-    // button change label the instant it's clicked, while the actual
-    // request still happens in the background.
-    flushSync(() => {
-      setIsSubmitting(true);
+  
+    // Save the current form data before clearing it
+    const submittedData = { ...formData };
+  
+    // Immediately update UI
+    setIsSubmitting(true);
+    setIsSent(true);
+  
+    // Clear the form immediately
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
     });
-
-    try {
-      const response = await apiServerClient.fetch('/contact/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message');
-      }
-
-      toast.success(data.message, {
-        duration: 3000,
-      });
-
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-    } catch (error) {
-      console.error('Contact form error:', error);
-      toast.error(error.message || 'An error occurred while sending your message. Please try again later.');
-    } finally {
+  
+    // Show Sent briefly
+    setTimeout(() => {
+      setIsSent(false);
       setIsSubmitting(false);
+    }, 1000);
+  
+    // Send to backend without waiting for the email process
+    try {
+      await apiServerClient.fetch("/contact/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submittedData),
+      });
+    } catch (error) {
+      console.error("Background contact error:", error);
     }
   };
 
@@ -237,9 +237,13 @@ const ContactPage = () => {
                       />
                     </div>
 
-                    <GlowButton type="submit" disabled={isSubmitting} className="w-full">
-                      {isSubmitting ? 'Sent' : 'Send Message'}
-                    </GlowButton>
+                    <GlowButton
+  type="submit"
+  disabled={isSubmitting}
+  className="w-full"
+>
+  {isSent ? "Sent" : "Send Message"}
+</GlowButton>
                   </form>
                 </div>
               </ScrollRevealAnimation>

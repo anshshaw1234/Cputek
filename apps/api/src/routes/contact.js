@@ -11,18 +11,34 @@ router.post("/send-email", async (req, res) => {
     console.log("CONTACT ROUTE HIT");
     console.log("BODY:", req.body);
 
+    // Save contact to MongoDB first
     const contact = await Contact.create(req.body);
 
-    await sendContactEmail(req.body);
-    await addToGoogleSheet(req.body);
-
     console.log("SAVED:", contact._id);
-    console.log("GOOGLE SHEET UPDATED");
 
-    res.status(200).json({
+    // Respond immediately to frontend
+    res.status(202).json({
       success: true,
-      message: "Message saved successfully",
+      message: "Message received successfully",
     });
+
+    // Continue background processing
+    sendContactEmail(req.body)
+      .then(() => {
+        console.log("✅ EMAIL SENT SUCCESSFULLY");
+      })
+      .catch((error) => {
+        console.error("❌ EMAIL ERROR:", error);
+      });
+
+    addToGoogleSheet(req.body)
+      .then(() => {
+        console.log("✅ GOOGLE SHEET UPDATED");
+      })
+      .catch((error) => {
+        console.error("❌ GOOGLE SHEET ERROR:", error);
+      });
+
   } catch (error) {
     console.error("SAVE ERROR:", error);
 

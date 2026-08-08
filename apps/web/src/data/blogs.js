@@ -2,7 +2,7 @@ const blogs = [
     {
       id: 0,
       title: "Digital Marketing",
-      image: "/public/images/blog0.jpeg",
+      image: "/images/blog0.jpeg",
       excerpt:
         "Discover the benefits of traditionally extracted wood pressed oils and why they are a great choice for everyday cooking.",
       content:
@@ -13,7 +13,7 @@ const blogs = [
         {
           id: 1,
           title: "Social Media Management: Why Every Business Needs It",
-          image: "/public/images/blog.jpeg",
+          image: "/images/blog.jpeg",
           excerpt:
             "Whether you run a small local shop or a big national company, social media is an essential piece of your marketing strategy.",
           content:
@@ -23,7 +23,7 @@ const blogs = [
         {
           id: 2,
           title: "The Importance of Graphic Design for Your Business",
-          image: "/public/images/blog2.jpeg",
+          image: "/images/blog2.jpeg",
           excerpt:
             "Graphic design is an important tool that enhances how you communicate with other people, conveying your ideas effectively and beautifully.",
           content:
@@ -33,7 +33,7 @@ const blogs = [
         {
           id: 3,
           title: "Software Development Services That Transform Your Business",
-          image: "/public/images/blog3.jpeg",
+          image: "/images/blog3.jpeg",
           excerpt:
             "CPUTEK, a trusted software development company in Kolkata, is your gateway to transformative software solutions.",
           content:
@@ -43,7 +43,7 @@ const blogs = [
         {
           id: 4,
           title: "SEO Services in Kolkata: Get Found Online",
-          image: "/public/images/blog4.jpeg",
+          image: "/images/blog4.jpeg",
           excerpt:
             "Struggling to be seen online in Kolkata? Cputek's friendly neighborhood SEO experts help you climb the Google ranks.",
           content:
@@ -53,7 +53,7 @@ const blogs = [
         {
           id: 5,
           title: "Mobile Application Development: Turning Your Vision Into Reality",
-          image: "/public/images/blog5.jpeg",
+          image: "/images/blog5.jpeg",
           excerpt:
             "If you have a vision for an app, we have the tools to turn that vision into a reality as a top-notch Mobile App Development Company.",
           content:
@@ -63,7 +63,7 @@ const blogs = [
         {
           id: 6,
           title: "Web Development Services Built on a Foundation of SEO",
-          image: "/public/images/blog6.jpeg",
+          image: "/images/blog6.jpeg",
           excerpt:
             "Your website is the foundation of your marketing strategy, and Cputek knows how to develop it according to your business model.",
           content:
@@ -74,7 +74,7 @@ const blogs = [
         {
             id: 7,
             title: "Email Marketing That Turns Subscribers Into Fans",
-            image: "/public/images/blog7.jpeg",
+            image: "/images/blog7.jpeg",
             excerpt:
               "At Cputek, we craft personalized messages that resonate with your audience, not generic blasts.",
             content:
@@ -84,7 +84,7 @@ const blogs = [
           {
             id: 8,
             title: "Facebook Ads Campaigns That Get You Noticed",
-            image: "/public/images/blog8.jpeg",
+            image: "/images/blog8.jpeg",
             excerpt:
               "Want to engage with your audience on their turf? Facebook Ads are a goldmine, but navigating them can be tricky. Cputek is your Facebook Ads sidekick.",
             content:
