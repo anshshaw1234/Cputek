@@ -9,12 +9,14 @@ export const sendContactEmail = async (formData) => {
     host: process.env.SMTP_HOST || "smtp.hostinger.com",
     port: Number(process.env.SMTP_PORT) || 465,
     secure: true,
-
+  
+    family: 4,
+  
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS,
     },
-
+  
     connectionTimeout: 20000,
     greetingTimeout: 20000,
     socketTimeout: 20000,
