@@ -26,12 +26,12 @@ const AdminDashboard = () => {
     })
     .catch((err) => console.error(err));
 
-  fetch(`${API_SERVER_URL}/blogs`)
-    .then((res) => res.json())
-    .then((data) => {
-      setBlogs(data.blogs);
-    })
-    .catch((err) => console.error(err));
+  // fetch(`${API_SERVER_URL}/blogs`)
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     setBlogs(data.blogs);
+  //   })
+  //   .catch((err) => console.error(err));
 
 }, []);
 

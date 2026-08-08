@@ -10,7 +10,7 @@ import HRServiceDetailPage from './pages/HRServiceDetailPage.jsx';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
 import AdminDashboard from './pages/AdminDashboard';
-import BlogAdminPage from "./pages/BlogAdminPage";
+// import BlogAdminPage from "./pages/BlogAdminPage.jsx";
 import BlogsPage from "./pages/BlogsPage";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -87,7 +87,7 @@ const AnimatedRoutes = () => {
     </ProtectedRoute>
   }
 />
-<Route
+{/* <Route
   path="/admin/blogs"
   element={
     <ProtectedRoute>
@@ -96,7 +96,7 @@ const AnimatedRoutes = () => {
       </PageWrapper>
     </ProtectedRoute>
   }
-/>
+/> */}
         {/* Catch-all route for 404s */}
         <Route path="*" element={<PageWrapper><HomePage /></PageWrapper>} />
         

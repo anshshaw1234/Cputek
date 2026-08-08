@@ -1,54 +1,77 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { API_SERVER_URL } from "../lib/apiServerClient";
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+import blogs from "../data/blogs";
 
-export default function BlogDetailPage() {
+const BlogDetailPage = () => {
   const { id } = useParams();
 
-  const [blog, setBlog] = useState(null);
-
-  useEffect(() => {
-    fetchBlog();
-  }, [id]);
-
-  const fetchBlog = async () => {
-    try {
-      const res = await axios.get(
-        `${API_SERVER_URL}/blogs/${id}`
-      );
-
-      setBlog(res.data.blog);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const blog = blogs.find((item) => String(item.id) === String(id));
 
   if (!blog) {
-    return <h2 className="text-center mt-10">Loading...</h2>;
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold mb-4">
+            Blog Not Found
+          </h1>
+
+          <Link
+            to="/blogs"
+            className="text-green-700 font-semibold"
+          >
+            ← Back to Blogs
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return (
-    <div className="max-w-5xl mx-auto py-10 px-4">
+    <div className="py-12 px-4 md:px-8">
+      <article className="max-w-4xl mx-auto">
 
-      <img
-        src={blog.image}
-        alt={blog.title}
-        className="w-full rounded-xl mb-8"
-      />
+        {/* Back */}
+        <Link
+          to="/blogs"
+          className="inline-block mb-8 text-green-700 font-medium hover:underline"
+        >
+          ← Back to Blogs
+        </Link>
 
-      <h1 className="text-4xl font-bold mb-4">
-        {blog.title}
-      </h1>
+        {/* Title */}
+        <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          {blog.title}
+        </h1>
 
-      <p className="text-gray-500 mb-6">
-        By {blog.author}
-      </p>
+        {/* Date */}
+        <p className="text-gray-300 mb-8">
+          {blog.date}
+        </p>
 
-      <div className="leading-8 text-lg whitespace-pre-wrap">
-        {blog.content}
-      </div>
+        {/* Image */}
+        {blog.image && (
+          <img
+            src={blog.image}
+            alt={blog.title}
+            className="w-full max-h-[500px] object-cover rounded-2xl mb-10"
+          />
+        )}
 
+        {/* Content */}
+        <div className="prose prose-lg max-w-none text-gray-200 leading-8">
+          {blog.content
+            ?.split("\n")
+            .filter(Boolean)
+            .map((paragraph, index) => (
+              <p key={index} className="mb-6">
+                {paragraph}
+              </p>
+            ))}
+        </div>
+
+      </article>
     </div>
   );
-}
+};
+
+export default BlogDetailPage;
