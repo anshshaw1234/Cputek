@@ -434,7 +434,7 @@ const Header = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </div> */}
 
               <Link
                 to="/blogs"
