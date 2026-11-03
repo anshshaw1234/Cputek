@@ -127,7 +127,7 @@ const HRServiceDetailPage = () => {
                   <div className="glass-base p-8 rounded-3xl text-center">
                     <h3 className="text-2xl font-bold text-foreground mb-4">Ready to optimize your HR?</h3>
                     <p className="text-muted-foreground mb-8">
-                      Let's discuss how our solutions for the {industry.title} industry can transform your organization.
+                      Let's discuss how our Human Resources solutions can transform your organization.
                     </p>
                     <GlowButton variant="primary" className="w-full" onClick={() => navigate('/contact')}>
                       Consult an Expert

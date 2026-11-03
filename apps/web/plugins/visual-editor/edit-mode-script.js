@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 // import { POPUP_STYLES } from "./plugins/visual-editor/visual-editor-config.js";
 
 const PLUGIN_APPLY_EDIT_API_URL = "/api/apply-edit";
@@ -24,15 +23,10 @@ let globalEventHandlers = null;
 
 let currentEditingInfo = null;
 
-// function injectPopupStyles() {
-// 	if (areStylesInjected) return;
-
-// 	const styleElement = document.createElement("style");
-// 	styleElement.id = "inline-editor-styles";
-// styleElement.textContent = POPUP_STYLES;
-// 	document.head.appendChild(styleElement);
-// 	areStylesInjected = true;
-// }
+function injectPopupStyles() {
+	if (areStylesInjected) return;
+	areStylesInjected = true;
+}
 
 function findEditableElementAtPoint(event) {
 	let editableElement = event.target.closest("[data-edit-id]");

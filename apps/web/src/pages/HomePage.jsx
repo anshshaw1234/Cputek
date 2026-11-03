@@ -76,8 +76,7 @@ const toggleVideo = () => {
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <GlowButton 
                   variant="primary" 
-                  href="https://wa.me/18002787835?text=Hi%20CPUTEK%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services"
-                  target="_blank"
+                  href="https://wa.me/918013920772?text=Hi%20CPUTEK%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20services"
                   rel="noopener noreferrer"
                 >
                   WhatsApp Us
@@ -163,7 +162,7 @@ const toggleVideo = () => {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <GlowButton 
                     variant="primary" 
-                    href="https://wa.me/18002787835?text=Hi%20CPUTEK%2C%20I%27m%20interested%20in%20learning%20more%20about%20your%20services"
+                    href="https://wa.me/918013920772?text=Hi%20CPUTEK%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20services"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

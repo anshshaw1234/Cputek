@@ -11,6 +11,13 @@ const authMiddleware = (req, res, next) => {
       });
     }
 
+    if (!process.env.JWT_SECRET) {
+      return res.status(503).json({
+        success: false,
+        message: "Authentication is not configured on the server.",
+      });
+    }
+
     const token = authHeader.split(" ")[1];
 
     if (!token) {

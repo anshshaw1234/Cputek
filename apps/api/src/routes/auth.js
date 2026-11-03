@@ -1,4 +1,4 @@
-console.log("✅ AUTH.JS LOADED");
+import { timingSafeEqual } from "node:crypto";
 import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -17,21 +17,32 @@ router.get("/", (req, res) => {
 
   router.post("/login", async (req, res) => {
     try {
-      const { email, password } = req.body;
+      const { username, email, password } = req.body ?? {};
+      const loginName = typeof username === "string" ? username : email;
   
-      if (!email || !password) {
+      if (typeof loginName !== "string" || typeof password !== "string" || !password) {
         return res.status(400).json({
           success: false,
-          message: "Email and password are required",
+          message: "Username and password are required",
         });
       }
   
-      const admin = await Admin.findOne({ email });
+      if (!process.env.JWT_SECRET) {
+        return res.status(503).json({
+          success: false,
+          message: "Admin login is not configured on the server.",
+        });
+      }
+
+      const normalizedLoginName = loginName.trim().toLowerCase();
+      const admin = await Admin.findOne({
+        $or: [{ username: normalizedLoginName }, { email: normalizedLoginName }],
+      });
   
       if (!admin) {
         return res.status(401).json({
           success: false,
-          message: "Invalid email or password",
+          message: "Invalid username or password",
         });
       }
   
@@ -40,13 +51,14 @@ router.get("/", (req, res) => {
       if (!isMatch) {
         return res.status(401).json({
           success: false,
-          message: "Invalid email or password",
+          message: "Invalid username or password",
         });
       }
   
       const token = jwt.sign(
         {
           id: admin._id,
+          username: admin.username,
           email: admin.email,
         },
         process.env.JWT_SECRET,
@@ -62,15 +74,16 @@ router.get("/", (req, res) => {
         admin: {
           id: admin._id,
           name: admin.name,
+          username: admin.username,
           email: admin.email,
         },
       });
     } catch (error) {
-      console.error(error);
+      console.error("Admin login failed:", error.message);
   
       res.status(500).json({
         success: false,
-        message: error.message,
+        message: "Unable to log in. Please try again.",
       });
     }
   });
@@ -78,21 +91,50 @@ router.get("/", (req, res) => {
 
 
   router.post("/register", async (req, res) => {
-    console.log("Headers:", req.headers);
-    console.log("Body:", req.body);
-  
     try {
-      const { name, email, password } = req.body;
-      // Validation
-      if (!name || !email || !password) {
-        return res.status(400).json({
+      const { name, username, email, password } = req.body ?? {};
+
+      const registrationSecret = process.env.ADMIN_REGISTRATION_SECRET;
+      const providedSecret = req.get("x-admin-registration-secret") || "";
+      const expectedSecretBuffer = Buffer.from(registrationSecret || "");
+      const providedSecretBuffer = Buffer.from(providedSecret);
+      if (
+        !registrationSecret ||
+        expectedSecretBuffer.length !== providedSecretBuffer.length ||
+        !timingSafeEqual(expectedSecretBuffer, providedSecretBuffer)
+      ) {
+        return res.status(registrationSecret ? 401 : 503).json({
           success: false,
-          message: "All fields are required",
+          message: registrationSecret
+            ? "Invalid admin registration credentials."
+            : "Admin registration is not configured.",
         });
       }
-  
+
+      if (await Admin.exists()) {
+        return res.status(403).json({
+          success: false,
+          message: "Initial admin registration is already complete.",
+        });
+      }
+
+      if (
+        typeof name !== "string" ||
+        !name.trim() ||
+        typeof email !== "string" ||
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()) ||
+        typeof password !== "string" ||
+        password.length < 12
+      ) {
+        return res.status(400).json({
+          success: false,
+          message: "Provide a name, valid email, and password of at least 12 characters.",
+        });
+      }
+
       // Check existing admin
-      const existingAdmin = await Admin.findOne({ email });
+      const normalizedEmail = email.trim().toLowerCase();
+      const existingAdmin = await Admin.findOne({ email: normalizedEmail });
   
       if (existingAdmin) {
         return res.status(400).json({
@@ -106,8 +148,11 @@ router.get("/", (req, res) => {
   
       // Save admin
       const admin = await Admin.create({
-        name,
-        email,
+        name: name.trim(),
+        username: (typeof username === "string" && username.trim()
+          ? username
+          : email.split("@")[0]).trim().toLowerCase(),
+        email: normalizedEmail,
         password: hashedPassword,
       });
   
@@ -117,6 +162,7 @@ router.get("/", (req, res) => {
         admin: {
           id: admin._id,
           name: admin.name,
+          username: admin.username,
           email: admin.email,
         },
       });
@@ -125,7 +171,7 @@ router.get("/", (req, res) => {
       
         res.status(500).json({
           success: false,
-          message: error.message,
+          message: "Unable to register admin. Please try again.",
         });
       }
   });

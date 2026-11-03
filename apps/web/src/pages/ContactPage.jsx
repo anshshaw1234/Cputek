@@ -20,9 +20,9 @@ const [isSent, setIsSent] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (isSubmitting) return;
-  
+
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all required fields");
       return;
@@ -32,40 +32,33 @@ const [isSent, setIsSent] = useState(false);
       toast.error("Please enter a valid email address");
       return;
     }
-  
-    // Save the current form data before clearing it
-    const submittedData = { ...formData };
-  
-    // Immediately update UI
+
     setIsSubmitting(true);
-    setIsSent(true);
-  
-    // Clear the form immediately
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
-  
-    // Show Sent briefly
-    setTimeout(() => {
-      setIsSent(false);
-      setIsSubmitting(false);
-    }, 1000);
-  
-    // Send to backend without waiting for the email process
     try {
-      await apiServerClient.fetch("/contact/send-email", {
+      const response = await apiServerClient.fetch("/contact/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(submittedData),
+        body: JSON.stringify(formData),
       });
+
+      const data = await response.json();
+      if (!response.ok) {
+        if (data.saved) {
+          setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+        }
+        throw new Error(data.message || "Your message could not be sent. Please try again.");
+      }
+
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+      setIsSent(true);
+      toast.success(data.message || "Your message was sent successfully.");
+      window.setTimeout(() => setIsSent(false), 2000);
     } catch (error) {
-      console.error("Background contact error:", error);
+      toast.error(error.message || "Your message could not be sent. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -253,13 +246,7 @@ const [isSent, setIsSent] = useState(false);
 
         <section className="py-24 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ScrollRevealAnimation>
-              <div className="glass-base rounded-3xl overflow-hidden h-96 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center">
-                  <p className="text-muted-foreground font-medium">Map placeholder - Kolkata, India</p>
-                </div>
-              </div>
-            </ScrollRevealAnimation>
+
           </div>
         </section>
       </main>

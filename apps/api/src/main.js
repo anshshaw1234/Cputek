@@ -1,10 +1,5 @@
-console.log("MAIN.JS LOADED");
 import dotenv from 'dotenv';
 dotenv.config();
-console.log("Mongo URI:", process.env.MONGODB_URI);
-
-console.log("EMAIL_USER:", process.env.EMAIL_USER);
-console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "FOUND" : "NOT FOUND");
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -17,6 +12,7 @@ import { globalRateLimit } from './middleware/global-rate-limit.js';
 import logger from './utils/logger.js';
 import { BodyLimit } from './constants/common.js';
 import { connectDB } from './db.js';
+import bootstrapAdmin from './services/bootstrapAdmin.js';
 
 
 
@@ -24,8 +20,6 @@ import { connectDB } from './db.js';
 const app = express();
 
 
-
-connectDB();
 
 app.set('trust proxy', true);
 
@@ -56,8 +50,24 @@ app.use(
 	  crossOriginResourcePolicy: false,
 	})
   );
+const allowedOrigins = new Set(
+	(process.env.CORS_ORIGIN || '')
+		.split(',')
+		.map((origin) => origin.trim())
+		.filter(Boolean),
+);
+if (process.env.NODE_ENV !== 'production') {
+	allowedOrigins.add('http://localhost:3000');
+	allowedOrigins.add('http://127.0.0.1:3000');
+}
 app.use(cors({
-	origin: process.env.CORS_ORIGIN,
+	origin: (origin, callback) => {
+		if (!origin || allowedOrigins.has(origin)) {
+			callback(null, true);
+			return;
+		}
+		callback(null, false);
+	},
 	credentials: true,
 }));
 app.use(morgan('combined'));
@@ -84,8 +94,17 @@ app.use((req, res) => {
 
 const port = process.env.PORT || 3001;
 
-app.listen(port, () => {
-	logger.info(`🚀 API Server running on http://localhost:${port}`);
+const startServer = async () => {
+	await connectDB();
+	await bootstrapAdmin();
+	app.listen(port, () => {
+		logger.info(`🚀 API Server running on http://localhost:${port}`);
+	});
+};
+
+startServer().catch((error) => {
+	logger.fatal('API server could not start:', error);
+	process.exitCode = 1;
 });
 
 export default app;

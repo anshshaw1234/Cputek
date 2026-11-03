@@ -1,317 +1,428 @@
-const generateGenericApproach = (category) => ({
-  timeline: "4-8 Weeks",
-  steps: [
-    { title: "Discovery & Strategy", description: "We begin by understanding your core message, target audience, and specific marketing objectives to build a tailored narrative strategy." },
-    { title: "Concept & Planning", description: "Our team develops initial script drafts, visual style frames, and detailed storyboards to align on the creative and directional flow." },
-    { title: "Production & Execution", description: "We execute the plan using industry-leading animation tools and methodologies, keeping you updated throughout the illustration and motion design process."},
-    { title: "Review & Refinement", description: "You review the animated deliverables, and we make necessary adjustments to ensure the final visual product meets your exact corporate standards." },
-    { title: "Final Delivery", description: "We deliver the finalized video assets or launch the media campaign, providing all necessary source files and deployment support." }
-  ],
-  deliverables: [
-    "Comprehensive narrative strategy document",
-    "Source files and final MP4/MOV assets",
-    "Multi-format exports for social media",
-    "Post-launch deployment guide"
-  ],
-  qualityAssurance: [
-    "Multi-stage internal animation review process",
-    "Cross-platform video playback testing",
-    "Brand guideline and visual compliance check",
-    "Audio syncing and high-definition rendering optimization"
-  ]
-});
-
-const generateGenericFaqs = (title) => [
-  { question: `How long does a typical ${title} project take?`, answer: "Most standard enterprise automation deployments reach completion within four to eight weeks, though this timeline scales based on your unique data complexity and legacy system requirements. To ensure peak performance, this duration includes rigorous security testing and seamless third-party integrations before the system goes live." },
-  { question: "How are revisions handled during technical development?", answer: "Our engineering team manages revisions through a transparent Agile workflow, holding collaborative sprint reviews with your stakeholders every two weeks. This structured process allows us to actively gather and incorporate your feedback into the next build, ensuring all functional adjustments are perfected before any finalized code is pushed to your production servers." },
-  { question: "What inputs are needed from internal teams to begin development?", answer: "To guarantee a smooth kickoff without unnecessary delays, your internal IT operations must provide our engineers with a comprehensive technical baseline. This essential handover includes full access to your existing technical documentation, detailed database schemas, representative sample data sets, and secure API credentials for system integration." },
-  { question: "Who owns the final software and intellectual property?", answer: "Your business retains absolute ownership of the completed project, as we operate strictly as a white-label development partner. Upon final sign-off, we execute a complete intellectual property transfer that hands over all custom source code, proprietary trained model weights, and comprehensive technical documentation for your team's future use." },
-  { question: "Can modern AI systems integrate with existing software teams?", answer: "Seamless integration is built directly into our deployment process, with our engineering leads working alongside your internal IT staff to ensure a flawless operational transition. Through shared code repositories and dedicated knowledge transfer sessions, we fully equip your developers to manage, maintain, and confidently build upon the new AI infrastructure." }
-];
-
 export const servicesData = [
-  //  AI Solutions & Enterprise Automation
   {
-    slug: 'Explore',
-    title: 'Enterprise automation',
-    category: 'AI Solutions & Enterprise Automation',
-    description: 'Many corporate operations struggle with slow manual data processing and repetitive daily tasks. The technical engineering team deploys custom artificial intelligence models and automated scripts to connect enterprise databases directly to internal operational pipelines. Engineers write custom Python scripts, configure LLM microservices, and build automated serverless pipelines using AWS Lambda and Apache Airflow. This modern technical architecture reduces manual labor time for large organizational teams.',
-    keyFeatures: [
-      'Workflow Automation - Python scripts and API webhooks execute scheduled data ingestion automatically. Serverless architectures process incoming invoices, extract text with optical character recognition engines, and update accounting ledgers in three seconds.',
-      'Custom Language Models - Machine learning engineers fine-tune open-source models like Llama on internal corporate documentation. Enterprise teams retrieve precise operational answers instantly without exposing private company data to external servers.',
-      'Legacy Systems Integration - Custom REST APIs and Docker containers link modern AI modules with legacy enterprise databases. Enterprise operations transfer structured JSON records across legacy systems without purchasing expensive third-party database connectors.',
-      'Error Monitoring & Auditing - Automated monitoring services track system throughput and flag anomalous data inputs instantly. The technical support team resolves execution errors through automated alerts before discrepancies affect daily client reporting.'
+    "title": "AI Solutions & Enterprise Automation",
+    "slug": "ai-solutions-enterprise-automation",
+    "category": "AI Solutions & Enterprise Automation",
+    "description": "Many corporate operations struggle with slow manual data processing and repetitive daily tasks. The technical engineering team deploys custom artificial intelligence models and automated scripts to connect enterprise databases directly to internal operational pipelines. Engineers write custom Python scripts, configure LLM microservices, and build automated serverless pipelines using AWS Lambda and Apache Airflow. This modern technical architecture reduces manual labor time for large organizational teams.",
+    "keyFeatures": [
+      "Workflow Automation: Python scripts and API webhooks execute scheduled data ingestion automatically. Serverless architectures process incoming invoices, extract text with optical character recognition engines, and update accounting ledgers in three seconds.",
+      "Custom Language Models: Machine learning engineers fine-tune open-source models like Llama on internal corporate documentation. Enterprise teams retrieve precise operational answers instantly without exposing private company data to external servers.",
+      "Legacy Systems Integration: Custom REST APIs and Docker containers link modern AI modules with legacy enterprise databases. Enterprise operations transfer structured JSON records across legacy systems without purchasing expensive third-party database connectors.",
+      "Error Monitoring & Auditing: Automated monitoring services track system throughput and flag anomalous data inputs instantly. The technical support team resolves execution errors through automated alerts before discrepancies affect daily client reporting."
     ],
-    portfolioItems: ['https://images.unsplash.com/photo-1628472392444-c2dde613cc43', 'https://images.unsplash.com/photo-1591630156291-91b867f54b8c'],
-    relatedServices: ['promotional-marketing-videos', 'motion-graphics-vfx', 'storyboarding-script-to-video'],
-    productionApproach: generateGenericApproach('Vide AI Solutions & Enterprise Automationo Services'),
-    faqs: generateGenericFaqs('Enterprise automation')
+    "productionApproach": {
+      "timeline": "4–8 Weeks",
+      "steps": [
+        {
+          "title": "Discovery & Strategy",
+          "description": "Technical leads analyze internal system architecture, existing database schemas, and daily manual operational bottlenecks to map targeted automation workflows."
+        },
+        {
+          "title": "Architecture & Design",
+          "description": "Engineers design custom API endpoints, database schemas, and data pipelines to align with strict corporate security standards."
+        },
+        {
+          "title": "Development & Integration",
+          "description": "Developers write production code, deploy containerized microservices, and train custom machine learning models on internal server infrastructure."
+        },
+        {
+          "title": "Testing & Validation",
+          "description": "Quality assurance specialists run automated unit tests, stress tests, and security audits to verify data accuracy across all system endpoints."
+        },
+        {
+          "title": "Deployment & Handover",
+          "description": "The engineering group deploys production builds to live enterprise servers while providing complete system documentation and technical support manuals."
+        }
+      ],
+      "deliverables": [
+        "Custom software source code and API documentation",
+        "Trained model files and database migration scripts",
+        "System monitoring dashboard configuration",
+        "Technical maintenance and administration guide"
+      ],
+      "qualityAssurance": [
+        "Multi-stage code review and security scanning",
+        "End-to-end data pipeline validation",
+        "Strict compliance checks for corporate data privacy",
+        "System load and latency testing"
+      ]
+    },
+    "faqs": [
+      {
+        "question": "How long does a typical enterprise automation project take?",
+        "answer": "Most standard enterprise automation deployments reach completion within four to eight weeks, though this timeline scales based on your unique data complexity and legacy system requirements. To ensure peak performance, this duration includes rigorous security testing and seamless third-party integrations before the system goes live."
+      },
+      {
+        "question": "How are revisions handled during technical development?",
+        "answer": "Our engineering team manages revisions through a transparent Agile workflow, holding collaborative sprint reviews with your stakeholders every two weeks. This structured process allows us to actively gather and incorporate your feedback into the next build, ensuring all functional adjustments are perfected before any finalized code is pushed to your production servers."
+      },
+      {
+        "question": "What inputs are needed from internal teams to begin development?",
+        "answer": "To guarantee a smooth kickoff without unnecessary delays, your internal IT operations must provide our engineers with a comprehensive technical baseline. This essential handover includes full access to your existing technical documentation, detailed database schemas, representative sample data sets, and secure API credentials for system integration."
+      },
+      {
+        "question": "Who owns the final software and intellectual property?",
+        "answer": "Your business retains absolute ownership of the completed project, as we operate strictly as a white-label development partner. Upon final sign-off, we execute a complete intellectual property transfer that hands over all custom source code, proprietary trained model weights, and comprehensive technical documentation for your team's future use."
+      },
+      {
+        "question": "Can modern AI systems integrate with existing software teams?",
+        "answer": "Seamless integration is built directly into our deployment process, with our engineering leads working alongside your internal IT staff to ensure a flawless operational transition. Through shared code repositories and dedicated knowledge transfer sessions, we fully equip your developers to manage, maintain, and confidently build upon the new AI infrastructure."
+      }
+    ]
   },
-  // {
-  //   slug: 'promotional-marketing-videos',
-  //   title: 'Promotional & Marketing Videos',
-  //   category: 'AI Solutions & Enterprise Automation',
-  //   description: 'Businesses need clear visual media to attract buyers during major sales campaigns. So the CPUTEK team creates short marketing videos to quickly capture viewers attention.These targeted advertisements communicate specific product details to buyers on social media platforms.And clear visuals turn casual online scrollers into actual paying customers.',
-  //   keyFeatures: [
-  //     'High-conversion scripting - Short media clips deliver fast promotional messages to mobile phone users. The production team formats these new videos for vertical digital screens. The bright visuals grab consumer attention in a crowded digital feed. The company launches these fast campaigns on Instagram and TikTok directly.',
-  //     'Dynamic editing - The video crew films broadcast commercials in exact 4K resolution. These large video files reach a wide national television audience daily. The bright visual clips play during regular evening commercial breaks. A clear vocal message drives thousands of new direct product sales.',
-  //     'Multi-platform formatting - A clear visual sequence shows exact product functions to potential buyers. The camera focuses closely on the physical buttons and moving parts. The entire digital video demonstration lasts exactly 30 seconds. Customers understand the exact mechanical operation without reading a heavy manual.',
-  //     'A/B testing variations - The marketing team builds a unified series of matching video files. This specific visual sequence creates strong brand recognition very quickly. The company releases one new digital video every single week. The complete corporate media project runs for exactly three full months.'],
-  //   portfolioItems: ['https://images.unsplash.com/photo-1536240478700-b869070f9279', 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f'],
-  //   relatedServices: ['explainer-videos', 'social-media-creatives-content-production', 'performance-marketing-paid-ads'],
-  //   productionApproach: generateGenericApproach(' AI Solutions & Enterprise Automation'),
-  //   faqs: generateGenericFaqs('Promotional & Marketing Videos')
-  // },
-  // {
-  //   slug: 'corporate-videos-company-profiles',
-  //   title: 'Corporate Videos & Company Profiles',
-  //   category: 'AI Solutions & Enterprise Automation',
-  //   description: 'Businesses struggle to share their exact company values with new investors. So a corporate video shows the physical office space and the real employees. The CPUTEK team creates clear company profiles for corporate websites. And these visual assets build strong trust with future employees or business partners.',
-  //   keyFeatures: [
-  //     'Company Profiles -  The camera crew films the main office headquarters. The video introduces the corporate leadership team to the public. The bright footage shows the physical workspace to new clients. Customers trust a business with a real physical location.',
-  //     ' Recruitment Videos - Real workers discuss their daily job duties on camera. The specific employee stories attract new staff members. The human resources department shares these visual clips online. The company fills open roles exactly two weeks faster.',
-  //     'Event Coverage - The camera team records large corporate meetings with multiple cameras. The editors cut the physical presentations into short clips. The company shares these final videos with remote workers. Office staff across the country watch the exact same information.',
-  //     'Training Videos - The studio produces clear visual instructions for heavy factory machinery. These exact visual steps teach new safety rules perfectly. Factory workers finish the digital lesson in exactly 10 minutes. The plant manager reports zero physical accidents for six months.'],
-  //   portfolioItems: ['https://images.unsplash.com/photo-1492691527719-9d1e07e534b4', 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3'],
-  //   relatedServices: ['employer-corporate-branding', 'brand-strategy-identity', 'instructor-led-talking-head'],
-  //   productionApproach: generateGenericApproach('AI Solutions & Enterprise Automation'),
-  //   faqs: generateGenericFaqs('Corporate Videos')
-  // },
-  // {
-  //   slug: 'motion-graphics-vfx',
-  //   title: 'Motion Graphics & VFX',
-  //   category: 'AI Solutions & Enterprise Automation',
-  //   description: 'Companies struggle to explain invisible digital products to their clients. So the digital artists use motion graphics to turn abstract data into clear visual shapes. The CPUTEK team creates custom visual effects for technical websites, and these animated elements hold viewer attention without using confusing terms.',
-  //   keyFeatures: [
-  //     'UI and UX Animation - The graphic designers animate specific software screens. The digital video shows exact button clicks to the online viewer. New software users learn the complete digital interface in exactly five minutes. The technical company receives 50 percent fewer support calls from confused customers.',
-  //     'Visual Effects - The digital artists add glowing light elements to physical video clips. These bright additions create a strong visual impact for the viewer. The production team renders the final graphics in exact 4K resolution. The short advertisement holds the attention of the online audience for 60 seconds.',
-  //     'Kinetic Typography - The video editors move large text words across the digital screen. This visual motion emphasizes the main audio message perfectly. Deaf viewers read the exact spoken words without missing any information. The fast typography holds human attention better than static text pages.',
-  //     '3D Product Renders - The animation software creates highly realistic 3D models of new products. The camera moves around the physical hardware to show every angle. Online buyers see the exact mechanical parts before they spend money. The manufacturing client sells 30 percent more units during the first week.'],
-  //   portfolioItems: ['https://images.unsplash.com/photo-1550745165-9bc0b252726f', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe'],
-  //   relatedServices: ['custom-animation-specialized-videos', 'explainer-videos', 'visual-branding-design'],
-  //   productionApproach: generateGenericApproach('AI Solutions & Enterprise Automation'),
-  //   faqs: generateGenericFaqs('Motion Graphics & VFX')
-  // },
-  // {
-  //   slug: 'storyboarding-script-to-video',
-  //   title: 'Storyboarding & Script-to-Video',
-  //   category: 'AI Solutions & Enterprise Automation',
-  //   description: 'Companies struggle to plan visual media without a clear written guide. So a detailed script turns a basic idea into a complete visual sequence. The CPUTEK team creates custom storyboards for commercial video projects. And these written documents guide the camera crew during the actual physical filming.',
-  //   keyFeatures: [
-  //     'Scriptwriting - The writers draft clear dialogue for the human actors. The cast members speak these exact words on the camera. The writers use short sentences to keep the viewing audience awake. The corporate client approves the final text before the filming begins.',
-  //     'Visual Storyboarding - The graphic artists draw the physical scenes on digital tablets. These simple sketches plan the specific camera movements perfectly. The director reviews the visual boxes to organize the daily filming schedule. The video studio saves 10 hours of paid production time.',
-  //     'Animatics - The video editors combine the rough sketches with basic audio tracks. The director watches this early video to test the exact pacing. The team spots slow sections before the expensive filming process starts. The writers fix the bad scenes in exactly two days.',
-  //     'Script to Video - The production crew follows the exact written plan on the physical set. The camera operators film the final media asset in 4K resolution. The actors speak the approved words without making any sudden mistakes. The business client receives the complete video project in three weeks.'],
-  //   portfolioItems: ['https://images.unsplash.com/photo-1586023492125-27b2c045efd7', 'https://images.unsplash.com/photo-1517842645767-c639042777db'],
-  //   relatedServices: ['explainer-videos', '2d-3d-story-videos', 'content-strategy-brand-communication'],
-  //   productionApproach: generateGenericApproach('AI Solutions & Enterprise Automation'),
-  //   faqs: generateGenericFaqs('Storyboarding')
-  // },
-  // {
-  //   slug: 'custom-animation-specialized-videos',
-  //   title: 'Custom Animation & Specialized Videos',
-  //   category: 'AI Solutions & Enterprise Automation',
-  //   description: 'Many companies require unique visual media for very specific corporate marketing campaigns. So the CPUTEK team creates custom animation to match these highly unusual project requirements. These specialized videos communicate abstract concepts to the target audience through clear visual storytelling. And the graphic artists build every single visual element from scratch to match the exact corporate brand.',
-  //   keyFeatures: [
-  //     '2D Character Animation - The digital artists draw custom mascots on their drawing tablets. These cartoon characters give the corporate brand a friendly face. Customers recognize the bright mascots on different social media channels. The design team creates exactly five new character poses every week.',
-  //     'Educational Content - The video creators build specific visual formats for modern schools. These bright videos explain highly technical academic subjects very clearly. Younger students understand the hard science lessons without reading thick books. Teachers show these short clips in their classrooms every single Tuesday.',
-  //     'Interactive Videos - The software developers add clickable elements to the final media file. Online viewers tap the specific screen buttons with their fingers. This direct physical action forces the audience to participate actively. The corporate client receives exact data about every single viewer choice.',
-  //     'Event Projections - The production team formats large digital graphics for specific events. High-powered machines project these bright videos onto tall physical walls. The moving lights entertain the guests during big corporate parties. The visual display covers exactly 500 square feet of the building.'],
-  //   portfolioItems: ['https://images.unsplash.com/photo-1611162617474-5b21e879e113', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71'],
-  //   relatedServices: ['motion-graphics-vfx', '2d-3d-story-videos', 'animated-elearning-explainers'],
-  //   productionApproach: generateGenericApproach('AI Solutions & Enterprise Automation'),
-  //   faqs: generateGenericFaqs('Custom Animation')
-  // },
-  // {
-  //   slug: '2d-3d-story-videos',
-  //   title: '2D & 3D Story Videos',
-  //   category: 'AI Solutions & Enterprise Automation',
-  //   description: 'Businesses struggle to share their true brand history with modern consumers. So a narrative story video builds a strong emotional connection with the target audience. The CPUTEK team creates 2D and 3D story videos for corporate websites. And these visual stories hold viewer attention much better than standard text articles.',
-  //   keyFeatures: [
-  //     'Character Animation - The digital artists design unique 2D mascots for the project. These bright characters guide the target audience. The mascots lead viewers through the specific digital narrative. The audience remembers the friendly faces for a long time.',
-  //     '3D Worlds - The computer software builds complete 3D digital environments. The bright video places the viewers inside the story. The target audience explores the new visual space. The studio renders these large files in exact 4K resolution.',
-  //     'Serial Content - The production team produces regular weekly animation episodes. The writers craft a new story every single week. This consistent schedule keeps the online audience returning. The corporate channel gains 1,000 new subscribers each month.',
-  //     ' Brand Stories - The animators create a visual timeline for the business. This clear video shares the exact company history. New investors watch the timeline to learn the financial facts. The specific story builds immediate trust with the new partners.'],
-  //   portfolioItems: ['https://images.unsplash.com/photo-1534447677768-be436bb09401', 'https://images.unsplash.com/photo-1558655146-d09347e92766'],
-  //   relatedServices: ['custom-animation-specialized-videos', 'storyboarding-script-to-video', 'ai-cinematic-3d-video'],
-  //   productionApproach: generateGenericApproach('AI Solutions & Enterprise Automation'),
-  //   faqs: generateGenericFaqs('2D & 3D Story Videos')
-  // },
-
-  // AI-POWERED VIDEO & AUDIO
   {
-    slug: 'text-to-video-generation',
-    title: 'eLearning & Corporate Training',
-    category: 'eLearning & Corporate Training',
-    description: 'Many organizations struggle to keep their workforce properly trained using outdated, passive materials on a very tight operational schedule. The CPUTEK team uses advanced instructional design software to turn complex written guidelines into fully interactive, multimedia-rich learning modules. This modern training method significantly boosts employee retention and saves massive amounts of administrative time for the corporate client.',
-    keyFeatures: [
-      'Custom Module Design: The instructional software builds entirely bespoke training modules based on standard written guidelines. The computer program generates interactive slides, videos, and quizzes that accurately reflect the corporate clients core brand identity. The development team delivers engaging learning experiences that feel natively built.',
-      'Seamless LMS Integration: The digital creators export the final courses in industry-standard protocols like SCORM and xAPI. These specialized files plug directly into the corporate clients existing Learning Management System without expensive technical workarounds. The final digital courses track employee progress and completion rates flawlessly.',
-      'Interactive Engagement: The software replaces static PDFs with dynamic, scenario-based branching narratives and gamified elements. The corporate client stops struggling with low employee engagement and high fatigue rates. The human resources team owns highly interactive materials that force users to actively participate in the learning process.',
-      'Rapid Deployment & Revisions: The development team updates specific course elements or regulatory information instantly without rebuilding the entire module. The computer program regenerates the updated interactive package in a fraction of the time. The training director tests different quiz structures and layouts before the final company-wide rollout begins.'
+    "title": "eLearning & Corporate Training",
+    "slug": "elearning-corporate-training",
+    "category": "eLearning & Corporate Training",
+    "description": "Many organizations struggle to keep their workforce properly trained using outdated, passive materials on a very tight operational schedule. The CPUTEK team uses advanced instructional design software to turn complex written guidelines into fully interactive, multimedia-rich learning modules. This modern training method significantly boosts employee retention and saves massive amounts of administrative time for the corporate client.",
+    "keyFeatures": [
+      "Custom Module Design: The instructional software builds entirely bespoke training modules based on standard written guidelines. The computer program generates interactive slides, videos, and quizzes that accurately reflect the corporate client's core brand identity. The development team delivers engaging learning experiences that feel natively built.",
+      "Seamless LMS Integration: The digital creators export the final courses in industry-standard protocols like SCORM and xAPI. These specialized files plug directly into the corporate client's existing Learning Management System without expensive technical workarounds. The final digital courses track employee progress and completion rates flawlessly.",
+      "Interactive Engagement: The software replaces static PDFs with dynamic, scenario-based branching narratives and gamified elements. The corporate client stops struggling with low employee engagement and high fatigue rates. The human resources team owns highly interactive materials that force users to actively participate in the learning process.",
+      "Rapid Deployment & Revisions: The development team updates specific course elements or regulatory information instantly without rebuilding the entire module. The computer program regenerates the updated interactive package in a fraction of the time. The training director tests different quiz structures and layouts before the final company-wide rollout begins."
     ],
-    portfolioItems: ['https://images.unsplash.com/photo-1677442136019-21780ecad995', 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485'],
-    relatedServices: ['ai-avatar-presenter-videos', 'content-seo-blogging', 'social-media-creatives-content-production'],
-    productionApproach: generateGenericApproach('AI-Powered Video & Audio'),
-    faqs: generateGenericFaqs('Text-to-Video Generation')
+    "productionApproach": {
+      "timeline": "3–6 Weeks",
+      "steps": [
+        {
+          "title": "Discovery & Strategy",
+          "description": "We begin by understanding your core learning objectives, target employee audience, and specific compliance requirements to build a tailored instructional strategy."
+        },
+        {
+          "title": "Concept & Planning",
+          "description": "Our team develops initial curriculum outlines, interactive wireframes, and multimedia storyboards to align on the creative and educational direction."
+        },
+        {
+          "title": "Production & Execution",
+          "description": "We execute the plan using industry-leading eLearning authoring tools and methodologies, keeping you updated throughout the module development process."
+        },
+        {
+          "title": "Review & Refinement",
+          "description": "You review the functional deliverables, and we make necessary adjustments to ensure the final interactive product meets your exact corporate standards."
+        },
+        {
+          "title": "Final Delivery",
+          "description": "We deliver the finalized LMS-ready assets or launch the training campaign, providing all necessary administrator documentation and technical support."
+        }
+      ],
+      "deliverables": [
+        "Comprehensive instructional strategy document",
+        "Source files and final SCORM/xAPI assets",
+        "LMS performance tracking setup",
+        "Post-launch administrator support guide"
+      ],
+      "qualityAssurance": [
+        "Multi-stage internal instructional review process",
+        "Cross-platform and multi-device compatibility testing",
+        "Brand guideline and accessibility compliance check",
+        "Interactive performance and loading speed optimization"
+      ]
+    },
+    "faqs": [
+      {
+        "question": "What types of eLearning modules do you develop for corporate training?",
+        "answer": "We design a wide array of interactive corporate training materials, including compliance modules, software simulations, and comprehensive leadership development courses. Each module is fully customized to align with your organizational goals and utilizes engaging multimedia elements to maximize employee retention and learning outcomes."
+      },
+      {
+        "question": "Which Learning Management Systems (LMS) are your courses compatible with?",
+        "answer": "All of our eLearning courses are built using industry-standard formats like SCORM, xAPI, and AICC to guarantee seamless integration with almost any modern Learning Management System. We also provide direct technical support during the deployment phase to ensure the content tracks user progress and completion rates accurately within your existing corporate infrastructure."
+      },
+      {
+        "question": "How do you ensure the training material remains engaging for employees?",
+        "answer": "We actively combat learner fatigue by integrating gamification, interactive quizzes, and scenario-based branching narratives directly into the training modules. This active learning approach transforms passive reading into an immersive experience, driving higher completion rates and ensuring your staff can practically apply the new concepts to their daily workflows."
+      },
+      {
+        "question": "How long does it take to develop a custom corporate training program?",
+        "answer": "The development timeline typically ranges from three to six weeks depending on the course length, media complexity, and the readiness of your source material. We follow a rapid prototyping methodology, allowing your subject matter experts to review storyboards and provide feedback early in the process to keep the final rollout strictly on schedule."
+      },
+      {
+        "question": "Can you modernize or translate our existing legacy training materials?",
+        "answer": "Yes, we comprehensively audit and modernize legacy training content by upgrading outdated interfaces, enhancing visual accessibility, and optimizing the courses for mobile devices. Additionally, our team offers full localization and translation services to ensure your globally distributed workforce receives culturally relevant and linguistically accurate training materials."
+      }
+    ]
   },
-  // {
-  //   slug: 'ai-avatar-presenter-videos', title: 'AI Avatar & Presenter Videos', category: 'AI-Powered Video & Audio', description: 'Companies need consistent human faces for long corporate training videos to hold the attention of the viewer. But scheduling physical actors requires a massive financial budget and a very long production timeline. So the CPUTEK team builds custom digital avatars to speak directly to the target audience. These virtual presenters deliver clear verbal messages with highly realistic facial movements.', keyFeatures: ['Custom Characters: The digital artists build unique male and female avatars. These custom digital bodies represent the specific company brand perfectly. The designers add exact facial details to match real human workers. Online customers trust these realistic friendly faces immediately.', 'Multiple Languages: The digital presenter speaks the exact same script in 20 different global languages. The software translates the English words into French and Spanish instantly. The corporate marketing team reaches a much wider international audience. The business saves $5,000 on physical translation services every single month.', 'Constant Production: The software generates a new corporate announcement video at any hour. The marketing manager types the text script at midnight. The computer program renders the final media file in exactly 10 minutes. The company shares the urgent news clip with staff before the morning shift.', 'Lip Synchronization: The computer matches the physical mouth movements perfectly to the uploaded audio track. The software analyzes the exact human voice file for specific sound waves. The digital avatar moves its lips exactly like a real human speaker. The viewing audience watches the 60-second video without noticing any visual mistakes.'], portfolioItems: ['https://images.unsplash.com/photo-1531746020798-e6953c6e8e04', 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158'], relatedServices: ['text-to-video-generation', 'instructor-led-talking-head', 'ai-voiceover-audio'],
-  //   productionApproach: generateGenericApproach('AI-Powered Video & Audio'),
-  //   faqs: generateGenericFaqs('AI Avatar Videos')
-  // },
-  // {
-  //   slug: 'ai-cinematic-3d-video', title: 'AI Cinematic & 3D Video', category: 'AI-Powered Video & Audio', description: 'Entertainment brands want huge cinematic visuals without the massive financial budget of a real movie studio. So the CPUTEK team uses advanced technology to build highly stylized digital worlds. The prompt engineers generate custom 3D scenes and specific camera angles from basic text descriptions. And these final video clips look exactly like very expensive Hollywood movie productions on the big screen.', keyFeatures: ['Cinematic Lighting: The prompt engineers type exact text commands for specific lighting conditions. The bright lights create a dramatic visual mood for the audience. The digital artists simulate dark shadows to copy real movie sets. Viewers feel strong emotions during the short video clip.', 'Virtual Camera Control: The digital artists generate specific drone shots using text prompts. The computer software builds wide camera angles for the video scenes. The virtual camera moves smoothly around the large digital environment. The corporate client saves $2,000 on physical camera rentals.', 'High Resolution: The rendering software exports the final cinematic files in 4K resolution. These large digital files play perfectly on big movie screens. The technical team checks every single visual frame for small errors. The online audience sees exact details on modern office monitors.', 'Stylized Portraits: The artists combine specific character faces with detailed digital environments. The prompt engineers use Midjourney to create highly realistic fusion images. The production crew keeps strict character consistency across multiple media clips. The final brand avatars look exactly like real human models.'], portfolioItems: ['https://images.unsplash.com/photo-1633412802994-5c058f151b66', 'https://images.unsplash.com/photo-1614729939124-032f0b56c9ce'], relatedServices: ['2d-3d-story-videos', 'motion-graphics-vfx', 'visual-branding-design'],
-  //   productionApproach: generateGenericApproach('AI-Powered Video & Audio'),
-  //   faqs: generateGenericFaqs('AI Cinematic Video')
-  // },
-  // {
-  //   slug: 'ai-voiceover-audio', title: 'AI Voiceover & Audio', category: 'AI-Powered Video & Audio', description: 'Video editors struggle to find the perfect human voice for specific commercial projects. And hiring physical actors requires expensive recording studios and very long scheduling delays. So the CPUTEK team generates professional audio tracks using advanced digital voice models. These virtual voices sound completely natural and read long written scripts in just a few seconds.', keyFeatures: ['Natural Speech: The audio software generates very realistic human voices. The digital models pause for breath between long sentences. The program highlights specific words to sound exactly like a physical actor. Listeners hear the clear audio track and trust the natural spoken message.', 'Custom Soundtracks: The digital tools generate completely original background music. The audio team creates specific songs to match the exact video mood. The computer writes 60 seconds of new music in just two minutes. The corporate client owns the full rights to this unique audio track.', 'Emotional Control: The audio editors adjust the specific software settings. The team changes the pitch to make the digital voice sound happy or serious. The artificial speaker sounds very urgent during a safety training video. This exact emotional control keeps the online audience interested in the lesson.', 'Accent Selection: The audio team selects specific regional accents for the voice track. The digital speaker uses a British or Australian voice easily. This specific sound appeals directly to local online markets. The international business sells 20 percent more products in those foreign countries.'], portfolioItems: ['https://images.unsplash.com/photo-1598488035139-bdbb2231ce04', 'https://images.unsplash.com/photo-1516280440502-62f5425a51e6'], relatedServices: ['text-to-video-generation', 'explainer-videos', 'animated-elearning-explainers'],
-  //   productionApproach: generateGenericApproach('AI-Powered Video & Audio'),
-  //   faqs: generateGenericFaqs('AI Voiceover')
-  // },
-
-  // ELEARNING & TRAINING
   {
-    slug: 'instructor-led-talking-head', title: 'Animation & Explainer Videos', category: 'Animation & Explainer Videos', description: 'Many digital brands struggle to explain complex products or services using static text and standard images. The CPUTEK team uses advanced animation software and storytelling techniques to turn complicated concepts into highly engaging visual narratives. This modern production method simplifies messaging, captures audience attention quickly, and significantly boosts conversion rates for the corporate client.', keyFeatures: ['Custom Visual Storytelling: The creative team builds entirely bespoke animations based on a tailored script. The digital artists generate custom illustrations, dynamic transitions, and character designs that accurately reflect the corporate clients core brand identity. The production team delivers engaging visual stories that feel natively built for the brand.', 'Voiceover & Audio Design: The studio pairs the visual elements with professional voiceover talent and custom soundscapes. These specialized audio tracks bring the animation to life without requiring the client to hire separate recording studios. The final digital videos feature crisp, broadcast-quality sound mixing that elevates the entire production.', 'Multi-Platform Optimization: The software exports the final animations in various formats, aspect ratios, and resolutions. The corporate client stops struggling with cropping issues across different social media channels. The marketing team owns highly optimized media files ready for deployment on YouTube, Instagram, LinkedIn, or the company website.', 'Agile Revisions:The animation team updates specific visual scenes or text overlays quickly without re-rendering the entire project from scratch. The specialized software regenerates the adjusted clips in a fraction of the time. The creative director tests different color palettes and pacing before the final high-definition render begins.'], portfolioItems: ['https://images.unsplash.com/photo-1516321318423-f06f85e504b3', 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655'], relatedServices: ['screencast-software-training', 'ai-avatar-presenter-videos', 'elearning-instructional-design-experts'],
-    productionApproach: generateGenericApproach('eLearning & Training'),
-    faqs: generateGenericFaqs('Instructor-Led Videos')
+    "title": "Animation & Explainer Videos",
+    "slug": "animation-explainer-videos",
+    "category": "Animation & Explainer Videos",
+    "description": "Many digital brands struggle to explain complex products or services using static text and standard images. The CPUTEK team uses advanced animation software and storytelling techniques to turn complicated concepts into highly engaging visual narratives. This modern production method simplifies messaging, captures audience attention quickly, and significantly boosts conversion rates for the corporate client.",
+    "keyFeatures": [
+      "Custom Visual Storytelling: The creative team builds entirely bespoke animations based on a tailored script. The digital artists generate custom illustrations, dynamic transitions, and character designs that accurately reflect the corporate client's core brand identity. The production team delivers engaging visual stories that feel natively built for the brand.",
+      "Voiceover & Audio Design: The studio pairs the visual elements with professional voiceover talent and custom soundscapes. These specialized audio tracks bring the animation to life without requiring the client to hire separate recording studios. The final digital videos feature crisp, broadcast-quality sound mixing that elevates the entire production.",
+      "Multi-Platform Optimization: The software exports the final animations in various formats, aspect ratios, and resolutions. The corporate client stops struggling with cropping issues across different social media channels. The marketing team owns highly optimized media files ready for deployment on YouTube, Instagram, LinkedIn, or the company website.",
+      "Agile Revisions: The animation team updates specific visual scenes or text overlays quickly without re-rendering the entire project from scratch. The specialized software regenerates the adjusted clips in a fraction of the time. The creative director tests different color palettes and pacing before the final high-definition render begins."
+    ],
+    "productionApproach": {
+      "timeline": "4–8 Weeks",
+      "steps": [
+        {
+          "title": "Discovery & Strategy",
+          "description": "We begin by understanding your core message, target audience, and specific marketing objectives to build a tailored narrative strategy."
+        },
+        {
+          "title": "Concept & Planning",
+          "description": "Our team develops initial script drafts, visual style frames, and detailed storyboards to align on the creative and directional flow."
+        },
+        {
+          "title": "Production & Execution",
+          "description": "We execute the plan using industry-leading animation tools and methodologies, keeping you updated throughout the illustration and motion design process."
+        },
+        {
+          "title": "Review & Refinement",
+          "description": "You review the animated deliverables, and we make necessary adjustments to ensure the final visual product meets your exact corporate standards."
+        },
+        {
+          "title": "Final Delivery",
+          "description": "We deliver the finalized video assets or launch the media campaign, providing all necessary source files and deployment support."
+        }
+      ],
+      "deliverables": [
+        "Comprehensive narrative strategy document",
+        "Source files and final MP4/MOV assets",
+        "Multi-format exports for social media",
+        "Post-launch deployment guide"
+      ],
+      "qualityAssurance": [
+        "Multi-stage internal animation review process",
+        "Cross-platform video playback testing",
+        "Brand guideline and visual compliance check",
+        "Audio syncing and high-definition rendering optimization"
+      ]
+    },
+    "faqs": [
+      {
+        "question": "How long does a typical Animation & Explainer Video project take?",
+        "answer": "A typical animation project takes an estimated 4 to 8 weeks to complete, depending on the video's length and visual complexity. This comprehensive timeline allows our team to thoroughly handle everything from the initial scriptwriting and storyboarding down to the final motion design and delivery."
+      },
+      {
+        "question": "Do you offer revisions during the process?",
+        "answer": "Yes, we provide a dedicated review and refinement phase where you can assess the animations and request necessary adjustments to meet your exact standards. Thanks to our advanced motion graphics tools, our digital artists can rapidly modify visual elements and pacing before the final high-definition render begins."
+      },
+      {
+        "question": "What do you need from us to get started?",
+        "answer": "To begin the discovery and strategy phase, we simply need a clear understanding of your core message, target audience, and any existing brand assets. This vital information allows our team to build a tailored narrative strategy and immediately start developing the initial scripts and storyboards for your approval."
+      },
+      {
+        "question": "Who owns the final deliverables?",
+        "answer": "Upon project completion and final delivery, your organization takes full ownership of the exact commercial rights to all newly developed animated videos. We ensure a smooth handover by providing all final high-definition assets, visual source files, a comprehensive strategy document, and a post-launch deployment guide."
+      },
+      {
+        "question": "Can you work with our existing internal team?",
+        "answer": "Absolutely, our creative process is highly collaborative, allowing our team to work alongside your internal marketing and design staff to perfectly align on the visual direction. We keep your team fully updated throughout the production phase while rigorously checking for brand compliance to ensure seamless integration into your existing campaigns."
+      }
+    ]
   },
-  // {
-  //   slug: 'screencast-software-training', title: 'Screencast & Software Training', category: 'eLearning & Training', description: 'Why do modern office workers constantly struggle to learn brand new computer programs? Standard printed text manuals fail to show the exact location of specific digital buttons on the screen. So the CPUTEK video team records the exact computer interface to teach these necessary digital skills clearly. These specific visual software demonstrations guide the online viewers step by step through very complex digital menus. And the corporate students learn the correct computer operations much faster without reading heavy paper documents.', keyFeatures: ['Cursor Tracking: The video editors add a bright yellow circle around the computer mouse. This specific shape highlights the exact physical clicks. Online users watch the moving yellow light on the bright screen. The visual guide stops confusion during complex software lessons.', 'Audio Narration: A professional human speaker explains the exact screen actions clearly. The audio track guides the online viewer through the complete digital process. The speaker uses plain words to describe the fast visual changes. The corporate client receives the final audio file in exactly two days.', 'Screen Zooming: The digital camera zooms closely into small text menus. This fast physical motion makes the tiny words completely readable. The online viewer sees the exact digital buttons without straining their eyes. The video editor cuts the close footage into the final media file.', 'Keystroke Display: The video file shows exact keyboard shortcuts on the bright screen. The large text boxes display the exact physical buttons to press. Office workers read the visual commands to finish their daily tasks faster. The staff members memorize the short codes in exactly 10 minutes.'], portfolioItems: ['https://images.unsplash.com/photo-1531403009284-440f080d1e12', 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97'], relatedServices: ['instructor-led-talking-head', 'animated-elearning-explainers', 'ui-ux-design-prototyping'],
-  //   productionApproach: generateGenericApproach('eLearning & Training'),
-  //   faqs: generateGenericFaqs('Screencast Training')
-  // },
-  // {
-  //   slug: 'animated-elearning-explainers', title: 'Animated eLearning Explainers', category: 'eLearning & Training', description: 'Why do students lose focus during highly technical corporate training sessions? The complex academic subjects bore the human audience very quickly without the addition of clear visual aids. So the CPUTEK digital artists create custom animated explainer videos for these difficult educational modules. These bright visual media assets transform abstract numerical data into very simple shapes for the online learners. And the corporate training departments report much higher final test scores across the entire global workforce.', keyFeatures: ['2D Animation: The digital artists draw flat colored shapes on their computer screens. These bright visual elements explain basic corporate compliance rules clearly. New office hires learn the exact company laws very fast. The simple art style holds human attention for exactly 10 minutes.', '3D Modeling: The computer software renders physical machine parts from every single angle. The clear digital models teach safe factory repair methods to workers. The mechanics see the exact metal joints before they touch them. This physical safety training reduces workplace accidents by 50 percent.', 'Data Visualization: The video editors turn boring numerical spreadsheets into bright moving graphs. These clear visual charts show exact financial growth numbers to investors. The moving colored bars make the hard math very easy to read. The financial department shares the final media file with all partners.', 'Abstract Concepts: The animators draw simple physical shapes to explain very hard ideas. The bright video makes invisible data security processes very clear. Online viewers see exact visual examples of the hidden computer codes. The technical company trains 100 new software engineers in one week.'], portfolioItems: ['https://images.unsplash.com/photo-1501504905252-473c47e087f8', 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173'], relatedServices: ['explainer-videos', 'custom-animation-specialized-videos', 'elearning-instructional-design-experts'],
-  //   productionApproach: generateGenericApproach('eLearning & Training'),
-  //   faqs: generateGenericFaqs('Animated eLearning')
-  // },
-
-  // DIGITAL MARKETING
-  { slug: 'brand-strategy-identity', title: 'Enterprise Software Development', category: 'Enterprise Software Development', description:'Many large-scale organizations struggle to manage complex operational workflows using fragmented legacy applications. The CPUTEK team uses advanced software engineering principles to build robust, scalable enterprise applications. This modern development approach streamlines internal operations, significantly reduces technical debt, and provides reliable infrastructure for the corporate client.'    ,keyFeatures: ['Custom Architecture Design: The engineering team builds entirely bespoke software systems based on unique operational requirements. The developers generate secure backend infrastructures and intuitive user interfaces that seamlessly align with the corporate clients technical ecosystem. The deployment team delivers robust platforms that feel natively integrated into daily operations.', 'Legacy System Integration: The software connects cleanly with existing third-party platforms via secure APIs and microservices. These specialized integrations bridge the gap between outdated legacy systems and modern cloud environments. The final enterprise application synchronizes data flawlessly across the entire corporate network.', 'Scalable Cloud Infrastructure: The application is hosted on flexible cloud environments designed to handle massive data loads effortlessly. The corporate client stops struggling with server downtime and slow processing speeds during peak operational hours. The IT department owns a highly resilient system that scales automatically as the business grows.','Agile Sprints & Revisions: The development team updates specific software modules or features continuously without disrupting the live environment. The engineers deploy new code iteratively through automated continuous integration pipelines. The project manager tests different user flows and functionalities before the final enterprise-wide rollout begins.'], portfolioItems: ['https://images.unsplash.com/photo-1434626881859-194d67b2b86f', 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0'], relatedServices: ['visual-branding-design', 'digital-branding-social-presence', 'employer-corporate-branding'],
-    productionApproach: generateGenericApproach('Digital Marketing'),
-    faqs: generateGenericFaqs('Brand Strategy')
+  {
+    "title": "Enterprise Software Development",
+    "slug": "enterprise-software-development",
+    "category": "Enterprise Software Development",
+    "description": "Many large-scale organizations struggle to manage complex operational workflows using fragmented legacy applications. The CPUTEK team uses advanced software engineering principles to build robust, scalable enterprise applications. This modern development approach streamlines internal operations, significantly reduces technical debt, and provides reliable infrastructure for the corporate client.",
+    "keyFeatures": [
+      "Custom Architecture Design: The engineering team builds entirely bespoke software systems based on unique operational requirements. The developers generate secure backend infrastructures and intuitive user interfaces that seamlessly align with the corporate client's technical ecosystem. The deployment team delivers robust platforms that feel natively integrated into daily operations.",
+      "Legacy System Integration: The software connects cleanly with existing third-party platforms via secure APIs and microservices. These specialized integrations bridge the gap between outdated legacy systems and modern cloud environments. The final enterprise application synchronizes data flawlessly across the entire corporate network.",
+      "Scalable Cloud Infrastructure: The application is hosted on flexible cloud environments designed to handle massive data loads effortlessly. The corporate client stops struggling with server downtime and slow processing speeds during peak operational hours. The IT department owns a highly resilient system that scales automatically as the business grows.",
+      "Agile Sprints & Revisions: The development team updates specific software modules or features continuously without disrupting the live environment. The engineers deploy new code iteratively through automated continuous integration pipelines. The project manager tests different user flows and functionalities before the final enterprise-wide rollout begins."
+    ],
+    "productionApproach": {
+      "timeline": "12–24 Weeks",
+      "steps": [
+        {
+          "title": "Discovery & Strategy",
+          "description": "We begin by understanding your core operational bottlenecks, user roles, and existing technical infrastructure to build a tailored software architecture strategy."
+        },
+        {
+          "title": "Concept & Planning",
+          "description": "Our team develops initial wireframes, database schemas, and technical stack recommendations to align on the functional and structural direction."
+        },
+        {
+          "title": "Production & Execution",
+          "description": "We execute the plan using industry-leading programming frameworks and agile methodologies, keeping you updated throughout the coding and development process."
+        },
+        {
+          "title": "Review & Refinement",
+          "description": "You review the functional software builds during user acceptance testing (UAT), and we make necessary adjustments to ensure the final product meets your exact operational standards."
+        },
+        {
+          "title": "Final Delivery",
+          "description": "We deliver the finalized application or launch the software environment, providing all necessary source code, technical documentation, and deployment support."
+        }
+      ],
+      "deliverables": [
+        "Comprehensive technical architecture document",
+        "Source code and compiled application binaries",
+        "Database schemas and API integration keys",
+        "Post-launch maintenance and IT support guide"
+      ],
+      "qualityAssurance": [
+        "Multi-stage internal code review and debugging process",
+        "Cross-platform usability and security vulnerability testing",
+        "Data privacy and regulatory compliance check",
+        "Server load balancing and processing speed optimization"
+      ]
+    },
+    "faqs": [
+      {
+        "question": "How long does a typical Enterprise Software Development project take?",
+        "answer": "A typical enterprise software project takes an estimated 12 to 24 weeks to complete, depending on your system's complexity and data requirements. This comprehensive timeline allows our team to thoroughly handle everything from the initial architecture design and backend coding down to final security testing and deployment."
+      },
+      {
+        "question": "Do you offer revisions during the process?",
+        "answer": "Yes, we provide a dedicated review and refinement phase where your IT stakeholders can assess the functional builds and request necessary adjustments to meet your exact standards. Thanks to our agile sprint cycles, our developers can rapidly modify user interfaces and system logic before the final production deployment begins."
+      },
+      {
+        "question": "What do you need from us to get started?",
+        "answer": "To begin the discovery and strategy phase, we simply need a clear understanding of your core operational bottlenecks, target user base, and existing IT infrastructure. This vital information allows our team to build a tailored technical strategy and immediately start developing the initial wireframes and database schemas for your approval."
+      },
+      {
+        "question": "Who owns the final deliverables?",
+        "answer": "Upon project completion and final delivery, your organization takes full ownership of the exact commercial rights and custom source code to the newly developed software. We ensure a smooth handover by providing all final application binaries, technical source files, a comprehensive architecture document, and a post-launch maintenance guide."
+      },
+      {
+        "question": "Can you work with our existing internal team?",
+        "answer": "Absolutely, our engineering process is highly collaborative, allowing our team to work alongside your internal IT and DevOps staff to perfectly align on the technical direction. We keep your team fully updated throughout the development phase while rigorously checking for system compatibility to ensure seamless integration into your existing technology stack."
+      }
+    ]
   },
-  // { slug: 'visual-branding-design', title: 'Visual Branding & Design', category: 'Digital Marketing', description: 'Visual elements communicate company values directly to consumers. We design recognizable brand marks, and these graphic assets create immediate visual impact. A consistent aesthetic builds consumer trust, so we standardize colors across all media platforms. Good design requires careful planning, and our team executes each detail with precision.', keyFeatures: ['Logo Design: The design team sketches initial concepts for the brand. Then the artists refine the best options into clean vector graphics. These scalable files look perfect on every physical sign or digital screen. The business chooses from exactly three unique logo versions.', 'Color Systems: The creative staff selects primary brand colors for the company. Then the team defines secondary palettes for all supporting materials. This specific color set ensures a unified look for the whole brand. The new palette reduces design time by exactly 25 percent.', 'Marketing Collateral: The graphic designers build professional business cards for the team. The staff creates clean templates for corporate presentations. Every document matches the core brand guidelines perfectly. The sales team shares 10 different marketing materials with potential clients.'], portfolioItems: ['https://images.unsplash.com/photo-1561070791-2526d30994b5', 'https://images.unsplash.com/photo-1626785774573-4b799315345d'], relatedServices: ['brand-strategy-identity', 'ui-ux-design-prototyping', 'social-media-creatives-content-production'],
-  //   productionApproach: generateGenericApproach('Digital Marketing'),
-  //   faqs: generateGenericFaqs('Visual Branding')
-  // },
-  // { slug: 'digital-branding-social-presence', title: 'Digital Branding & Social Presence', category: 'Digital Marketing', description: 'Online platforms require specific branding strategies for maximum visibility. We align digital profiles with corporate guidelines, and this synchronization creates a unified web presence. Social media accounts need customized graphics, so we design profile banners and post templates. Consistent digital branding builds loyal communities, and clear messaging drives online engagement.', keyFeatures: ['Profile Formatting: The design team formats company logos for circular avatars. The artists design precise cover images for various digital platforms. The brand look stays consistent on every mobile device. The creative team finishes the final exports in exactly one hour.', 'Content Templates: The graphic designers build reusable graphic files for the marketing teams. The staff uses these templates to publish new posts very quickly. This digital system reduces the design time by exactly 40 percent. The marketing team shares 20 unique posts every month easily.', 'Asset Management: The technical team organizes the digital files on a secure central server. The experts establish clear rules for online brand representation. This organized system helps the staff find specific logos in exactly five seconds. The business maintains a clean digital library for all marketing assets.'], portfolioItems: ['https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0', 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7'], relatedServices: ['social-media-management', 'brand-strategy-identity', 'content-strategy-brand-communication'],
-  //   productionApproach: generateGenericApproach('Digital Marketing'),
-  //   faqs: generateGenericFaqs('Digital Branding')
-  // },
-  // { slug: 'employer-corporate-branding', title: 'Employer & Corporate Branding', category: 'Digital Marketing', description: 'Companies must build strong reputations to attract highly qualified professionals. We develop employer value propositions, and these statements communicate internal culture to external candidates. A strong corporate brand reduces hiring costs, so we design recruitment materials that highlight company benefits. Internal alignment matters heavily, and clear communication keeps current employees engaged.', keyFeatures: ['Talent Attraction: The marketing team crafts creative recruitment campaigns. They target specific professional demographics for the open job roles. These digital ads reach the best candidates on social media platforms. The company hires 10 new experts in exactly one month.', 'Culture Handbooks: The writers create clear internal culture guides for the staff. New hires read the book to understand the company values immediately. The 20-page document explains the business mission in plain words. This guide helps the new workers feel comfortable on their very first day.', 'Recruitment Assets: The design team builds large trade show booths for the client. The artists produce branded materials for university career fairs. Students collect the colorful flyers and pens from the display table. The business attracts 100 new applicants at each physical event.'], portfolioItems: ['https://images.unsplash.com/photo-1522071820081-009f0129c71c', 'https://images.unsplash.com/photo-1552664730-d307ca884978'], relatedServices: ['corporate-videos-company-profiles', 'brand-strategy-identity', 'dedicated-resource-hiring'],
-  //   productionApproach: generateGenericApproach('Digital Marketing'),
-  //   faqs: generateGenericFaqs('Employer Branding')
-  // },
-  // { slug: 'ai-powered-branding', title: 'AI-Powered Branding', category: 'Digital Marketing', description: 'Artificial intelligence tools accelerate the creation of visual branding materials. We input strategic parameters into generation models, and these systems produce rapid conceptual variations. Machine learning analyzes market trends, so we adapt brand positioning based on concrete data. The technology speeds up production timelines, and our human designers refine the machine outputs for final commercial use.', keyFeatures: ['Asset Generation: The digital team uses advanced algorithms to build background patterns. The computer software creates custom brand textures for every marketing project. The designers use these unique visual elements to build a distinct brand identity. The software generates exactly 50 high-resolution textures in five minutes.', 'Data Analysis: The marketing team tracks specific competitor branding metrics in real time. The experts adjust brand strategies based on precise statistical models. The digital dashboard shows the exact market share of rival companies. The business improves the total engagement rate by exactly 12 percent.', 'Messaging Drafts: The writers generate 20 variations for the core brand slogans. The creative team tests these short phrases against the target audience. The staff selects the best text for the final advertising campaign. The brand finds the most effective message in exactly three days.'], portfolioItems: ['https://images.unsplash.com/photo-1677442136019-21780ecad995', 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485'], relatedServices: ['visual-branding-design', 'ai-driven-digital-marketing', 'text-to-video-generation'],
-  //   productionApproach: generateGenericApproach('Digital Marketing'),
-  //   faqs: generateGenericFaqs('AI-Powered Branding')
-  // },
-  // { slug: 'corporate-business-websites', title: 'Corporate & Business Websites', category: 'Digital Marketing', description: 'A corporate website serves as the primary informational hub for a business. We organize complex company data into clear navigation menus, and this structure helps visitors find information easily. Enterprise sites require high security standards, so we implement strict server hosting protocols. The interface must reflect the corporate identity precisely, and our developers follow visual brand guidelines closely.', keyFeatures: ['Information Architecture: The technical team maps out the complete site structure on the computer screen. The writers organize all digital content into intuitive categories for the users. This clear layout helps customers find specific information in exactly three clicks. The website visitors navigate the 100 distinct pages with total ease.', 'Secure Hosting: The computer experts configure encrypted servers to protect private company data. The technical staff monitors the live website for security threats in real time. The digital system blocks 100 percent of unauthorized access attempts automatically. This secure hosting environment ensures total safety for every single online customer.', 'Responsive Layouts: The developers program the digital interface to work on every screen size. The website functions properly on small mobile phones and large desktop monitors. The images and text boxes resize instantly for a clean visual experience. Remote users load the main landing page in exactly two seconds.'], portfolioItems: ['https://images.unsplash.com/photo-1460925895917-afdab827c52f', 'https://images.unsplash.com/photo-1522542550221-31fd19575a2d'], relatedServices: ['ui-ux-design-prototyping', 'landing-pages-conversion-funnels', 'technical-seo'],
-  //   productionApproach: generateGenericApproach('Digital Marketing'),
-  //   faqs: generateGenericFaqs('Corporate Websites')
-  // },
-  // { slug: 'ui-ux-design-prototyping', title: 'UI/UX Design & Prototyping', category: 'Digital Marketing', description: 'Software interfaces require logical layouts and predictable user interactions. We research how people use applications, and this data informs our structural wireframes. Clear navigation prevents user frustration, so we place buttons and menus in standard locations. Prototyping allows testing before development begins, and this step saves money on programming revisions.', keyFeatures: ['Journey Mapping: The design team charts every physical step a user takes on the site. The experts simplify complex software processes to improve the total user experience. This clear map identifies exactly five main touchpoints for the customer. This direct path reduces user confusion by 40 percent.', 'Wireframing: The designers draw low-fidelity screen layouts for the new project. The team finalizes the placement of every content block and digital button. This visual blueprint shows the exact structure of 20 unique pages. The developers start the actual coding in exactly two days.', 'Interactive Prototypes: The technical staff links the screen designs together on the computer. This system creates a simulated application for the corporate stakeholders. The business leaders click through the final interface to test the logic. The team finishes the working prototype in exactly one work week.'], portfolioItems: ['https://images.unsplash.com/photo-1561070791-2526d30994b5', 'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e'], relatedServices: ['corporate-business-websites', 'landing-pages-conversion-funnels', 'visual-branding-design'],
-  //   productionApproach: generateGenericApproach('Digital Marketing'),
-  //   faqs: generateGenericFaqs('UI/UX Design')
-  // },
-  // { slug: 'landing-pages-conversion-funnels', title: 'Landing Pages & Conversion Funnels', category: 'Digital Marketing', description: 'Advertising campaigns need specific destination pages to capture user information. We build focused landing pages, and these designs remove unnecessary navigation links. The layout directs attention to a single call to action, so conversion rates remain high. Testing different headlines improves performance, and we adjust the layouts based on incoming traffic data.', keyFeatures: ['Focused Design: The design team removes standard site menus from the layout. This specific visual strategy keeps the visitor focused on the single offer. The clean page prevents human distractions during the reading process. The total conversion rate increases by exactly 10 percent.', 'Form Simplification: The writers limit the total number of input fields on the screen. This change helps visitors complete the registration process very quickly. The online user enters their basic details in exactly 30 seconds. The short form reduces user frustration for every potential customer.', 'Performance Testing: The technical team runs two simultaneous page variations for the brand. The smart software routes all traffic to the winning design automatically. The computer system measures the exact physical response of every visitor. The marketing department finds the most effective page in exactly 24 hours.'], portfolioItems: ['https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f'], relatedServices: ['performance-marketing-paid-ads', 'ui-ux-design-prototyping', 'roi-driver-marketing'],
-  //   productionApproach: generateGenericApproach('Digital Marketing'),
-  //   faqs: generateGenericFaqs('Landing Pages')
-  // },
-
-  // DIGITAL MEDIA
-  { slug: 'social-media-management', title: 'Creative Design & Brand Communication', category: 'Creative Design & Brand Communication', description: 'Many modern businesses struggle to stand out in a crowded market using inconsistent visuals and fragmented messaging. The CPUTEK team uses advanced design principles to turn abstract corporate values into a highly cohesive brand identity. This modern creative method establishes instant trust, captures audience attention, and significantly boosts brand recognition for the corporate client.', keyFeatures: ['Cohesive Brand Identity: The creative team builds entirely bespoke visual guidelines based on core company values. The designers generate custom logos, typography sets, and color palettes that accurately reflect the corporate clients unique market position. The production team delivers a unified aesthetic that feels natively built for all brand touchpoints.', 'Engaging Marketing Collateral: The studio pairs the core identity with professionally designed digital and print materials. These specialized assets bring the brand strategy to life across brochures, social media templates, and corporate presentations. The final design files feature crisp, high-resolution layouts that elevate the entire marketing portfolio.', 'Multi-Channel Consistency: The software exports the final design assets in various formats, color profiles, and dimensions. The corporate client stops struggling with blurry or mismatched graphics across different platforms. The marketing team owns highly optimized visual files ready for deployment on digital networks or physical printing presses.','Iterative Design Revisions: The design team updates specific visual elements or layouts quickly without completely overhauling the core identity. The specialized designers adjust the creative assets in a fraction of the time. The art director tests different stylistic variations and layout grids before the final master files are exported.'], portfolioItems: ['https://images.unsplash.com/photo-1611162617474-5b21e879e113', 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0'], relatedServices: ['social-media-creatives-content-production', 'digital-branding-social-presence', 'influencer-creator-marketing'],
-    productionApproach: generateGenericApproach('Digital Media'),
-    faqs: generateGenericFaqs('Social Media Management')
+  {
+    "title": "Creative Design & Brand Communication",
+    "slug": "creative-design-brand-communication",
+    "category": "Creative Design & Brand Communication",
+    "description": "Many modern businesses struggle to stand out in a crowded market using inconsistent visuals and fragmented messaging. The CPUTEK team uses advanced design principles to turn abstract corporate values into a highly cohesive brand identity. This modern creative method establishes instant trust, captures audience attention, and significantly boosts brand recognition for the corporate client.",
+    "keyFeatures": [
+      "Cohesive Brand Identity: The creative team builds entirely bespoke visual guidelines based on core company values. The designers generate custom logos, typography sets, and color palettes that accurately reflect the corporate client's unique market position. The production team delivers a unified aesthetic that feels natively built for all brand touchpoints.",
+      "Engaging Marketing Collateral: The studio pairs the core identity with professionally designed digital and print materials. These specialized assets bring the brand strategy to life across brochures, social media templates, and corporate presentations. The final design files feature crisp, high-resolution layouts that elevate the entire marketing portfolio.",
+      "Multi-Channel Consistency: The software exports the final design assets in various formats, color profiles, and dimensions. The corporate client stops struggling with blurry or mismatched graphics across different platforms. The marketing team owns highly optimized visual files ready for deployment on digital networks or physical printing presses.",
+      "Iterative Design Revisions: The design team updates specific visual elements or layouts quickly without completely overhauling the core identity. The specialized designers adjust the creative assets in a fraction of the time. The art director tests different stylistic variations and layout grids before the final master files are exported."
+    ],
+    "productionApproach": {
+      "timeline": "4–10 Weeks",
+      "steps": [
+        {
+          "title": "Discovery & Strategy",
+          "description": "We begin by understanding your core values, target audience, and specific market positioning to build a tailored brand communication strategy."
+        },
+        {
+          "title": "Concept & Planning",
+          "description": "Our team develops initial mood boards, visual concepts, and typography pairings to align on the creative and aesthetic direction."
+        },
+        {
+          "title": "Production & Execution",
+          "description": "We execute the plan using industry-leading design tools and methodologies, keeping you updated throughout the drafting and illustration process."
+        },
+        {
+          "title": "Review & Refinement",
+          "description": "You review the creative deliverables, and we make necessary adjustments to ensure the final visual product meets your exact corporate standards."
+        },
+        {
+          "title": "Final Delivery",
+          "description": "We deliver the finalized design assets or launch the brand rollout, providing all necessary source files and usage guidelines."
+        }
+      ],
+      "deliverables": [
+        "Comprehensive brand guidelines document",
+        "Source files and final vector/raster assets",
+        "Multi-format exports for digital and print",
+        "Post-launch brand application guide"
+      ],
+      "qualityAssurance": [
+        "Multi-stage internal design review process",
+        "Cross-medium visual consistency testing",
+        "Brand guideline and aesthetic compliance check",
+        "Print-ready color and resolution optimization"
+      ]
+    },
+    "faqs": [
+      {
+        "question": "How long does a typical Creative Design & Brand Communication project take?",
+        "answer": "A typical creative design project takes an estimated 4 to 10 weeks to complete, depending on the scope of the visual identity and collateral required. This comprehensive timeline allows our team to thoroughly handle everything from the initial strategy and mood boarding down to the final asset generation and delivery."
+      },
+      {
+        "question": "Do you offer revisions during the process?",
+        "answer": "Yes, we provide a dedicated review and refinement phase where you can assess the designs and request necessary adjustments to meet your exact standards. Thanks to our agile design workflows, our artists can rapidly modify visual elements and layouts before the final master files are exported."
+      },
+      {
+        "question": "What do you need from us to get started?",
+        "answer": "To begin the discovery and strategy phase, we simply need a clear understanding of your core business values, target demographic, and any existing marketing materials. This vital information allows our team to build a tailored communication strategy and immediately start developing the initial mood boards and concepts for your approval."
+      },
+      {
+        "question": "Who owns the final deliverables?",
+        "answer": "Upon project completion and final delivery, your organization takes full ownership of the exact commercial rights to all newly developed brand assets. We ensure a smooth handover by providing all final high-resolution files, scalable vector graphics, a comprehensive brand guidelines document, and a post-launch usage guide."
+      },
+      {
+        "question": "Can you work with our existing internal team?",
+        "answer": "Absolutely, our creative process is highly collaborative, allowing our team to work alongside your internal marketing and PR staff to perfectly align on the aesthetic direction. We keep your team fully updated throughout the production phase while rigorously checking for messaging compliance to ensure seamless integration into your upcoming campaigns."
+      }
+    ]
   },
-  // { slug: 'social-media-creatives-content-production', title: 'Social Media Creatives & Content Production', category: 'Digital Media', description: 'Visual content captures attention in crowded digital feeds immediately. Brands need high-quality images, and they require engaging short videos to stand out. Poor graphics damage brand credibility, so we produce polished commercial media. Every post requires a specific visual strategy, and our production team matches the design to the target audience.', keyFeatures: ['Graphic Design: The design team creates custom illustrations for the company. The artists format these files for specific feed requirements. The bright images look perfect on every digital screen. The creative staff finishes exactly 15 graphics in one day.', 'Short-Form Video: The production crew records commercial video clips for the brand. The video editors add clear text overlays to the footage. This visual text allows for easy silent viewing on mobile phones. The marketing team publishes exactly five new videos every week.', 'Copywriting: The writers draft the exact text for every social post. The marketing experts select relevant search tags for the digital platform. This plain language connects directly with the target audience. The written content attracts exactly 500 new readers every single day.'], portfolioItems: ['https://images.unsplash.com/photo-1563986768609-322da13575f3', 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7'], relatedServices: ['social-media-management', 'promotional-marketing-videos', 'visual-branding-design'],
-  //   productionApproach: generateGenericApproach('Digital Media'),
-  //   faqs: generateGenericFaqs('Social Media Creatives')
-  // },
-  // { slug: 'influencer-creator-marketing', title: 'Influencer & Creator Marketing', category: 'Digital Media', description: 'Consumers trust recommendations from their favorite digital personalities. Brands partner with popular creators, and this strategy places products in front of established audiences. Finding the right partner takes time, so we manage the entire search process. A bad partnership wastes money, and we verify audience authenticity before signing any contracts.', keyFeatures: ['Talent Discovery: The marketing team searches large databases for new digital creators. The experts review their past performance metrics carefully on the computer. This deep research helps the brand find the perfect online voice. The company discovers 10 potential partners in exactly two days.', 'Contract Negotiation: The legal team discusses specific payment terms with the chosen influencer. The staff finalizes the legal requirements for the new digital partnership. This clear agreement protects the corporate brand from any future confusion. The business signs the final contract in exactly 48 hours.', 'Campaign Tracking: The data analysts monitor the live social posts in real time. The software counts the exact number of website clicks generated by the creator. This digital tracking shows the true financial value of the marketing investment. The successful campaign drives exactly 5,000 new visitors to the online store.'], portfolioItems: ['https://images.unsplash.com/photo-1516321497487-e288fb19713f', 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f'], relatedServices: ['social-media-management', 'content-strategy-brand-communication', 'performance-marketing-paid-ads'],
-  //   productionApproach: generateGenericApproach('Digital Media'),
-  //   faqs: generateGenericFaqs('Influencer Marketing')
-  // },
-  // { slug: 'content-strategy-brand-communication', title: 'Content Strategy & Brand Communication', category: 'Digital Media', description: 'Businesses must speak with one consistent voice across all public channels. A clear strategy defines the target audience, and it dictates the correct topics to discuss. Confusing messages push customers away, so we map out specific communication plans. Good strategy prevents random posting, and it aligns every piece of content with corporate goals.', keyFeatures: ['Brand Narrative: The writers define the complete company history in plain words. The creative team writes compelling stories about the business founders. This clear text connects the corporate brand with the human audience. The final narrative builds strong trust with exactly 500 new customers.', 'Audience Profiling: The marketing team researches exact customer demographics in the market. The experts list specific daily problems for the online buyers. This detailed research helps the business understand the target audience completely. The company finds exactly 10 new sales opportunities in one week.', 'Content Mapping: The marketing team assigns specific topics to different calendar months. The experts build a clear long-term schedule for the business. This visual map guides the writers through the entire production process. The digital staff publishes exactly 12 new articles every single year.'], portfolioItems: ['https://images.unsplash.com/photo-1454165804606-c3d57bc86b40', 'https://images.unsplash.com/photo-1552664730-d307ca884978'], relatedServices: ['brand-strategy-identity', 'content-seo-blogging', 'social-media-management'],
-  //   productionApproach: generateGenericApproach('Digital Media'),
-  //   faqs: generateGenericFaqs('Content Strategy')
-  // },
-  // { slug: 'ai-driven-digital-marketing', title: 'AI-Driven Digital Marketing', category: 'Digital Media', description: 'Modern advertising requires analyzing massive amounts of data instantly. Machine learning tools process this information quickly, and they adjust digital campaigns in real time. Manual bidding wastes advertising budgets, so we use automated systems to buy ad space. Technology finds hidden audience segments, and this precise targeting lowers the cost per click.', keyFeatures: ['Automated Bidding: The smart digital system adjusts ad bids every single second. This fast computer software maximizes the exact financial return for the company. The marketing team saves hours of manual work on the digital dashboard. The business increases total daily profit by exactly 15 percent.', 'Split Testing: The computer software runs multiple ad versions at the same time. The smart system pauses the underperforming digital units automatically. This direct action stops the business from wasting valuable ad money. The marketing department finds the best visual ad in exactly 12 hours.', 'Predictive Targeting: The advanced computer algorithm studies past purchase data on the main server. The digital tool predicts future buying behavior for the target audience. This clear math helps the brand show ads to the right human users. The exact targeting strategy produces 50 new sales in exactly one day.'], portfolioItems: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f'], relatedServices: ['roi-driver-marketing', 'ai-powered-seo', 'performance-marketing-paid-ads'],
-  //   productionApproach: generateGenericApproach('Digital Media'),
-  //   faqs: generateGenericFaqs('AI-Driven Marketing')
-  // },
-  // { slug: 'roi-driver-marketing', title: 'ROI Driver Marketing', category: 'Digital Media', description: 'A clear plan directs all search marketing efforts, and businesses need precise targets to capture web traffic. We analyze consumer search habits, and we build a comprehensive list of valuable phrases. The strategy aligns with business goals, so companies rank for terms that generate revenue. Good planning prevents wasted effort, and a solid strategy builds long-term traffic stability for the brand.', keyFeatures: ['Phrase Discovery: The SEO team scans large search databases for the client. The experts identify high-volume terms for the specific target industry. This deep research finds the exact words that online customers use. The final strategy uncovers exactly 50 profitable keywords in one week.', 'Topic Clustering: The technical writers group similar search terms together. This smart organization creates clear website categories for the new business. The structured data helps search engines understand the core brand message easily. The team builds exactly five main content pillars for the corporate website.', 'Competitor Tracking: The digital analysts monitor rival websites in real time. The experts analyze the top-performing web pages of the main competition. This clear research reveals the exact online strategy of the market leaders. The business outranks exactly 10 major competitors on the main search engine.'], portfolioItems: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f'], relatedServices: ['performance-marketing-paid-ads', 'landing-pages-conversion-funnels', 'seo-analytics-reporting'],
-  //   productionApproach: generateGenericApproach('Digital Media'),
-  //   faqs: generateGenericFaqs('ROI Driver Marketing')
-  // },
-
-  // SEO STRATEGY & KEYWORD RESEARCH
-  { slug: 'on-page-seo-optimization', title: 'Human Resources ad Compliance', category: 'Human Resources ad Compliance', description: 'Many growing businesses struggle to manage complex workforce regulations using outdated, manual paperwork on a very tight operational schedule. The CPUTEK team uses advanced HR frameworks and compliance software to turn complicated legal guidelines into streamlined, automated internal processes. This modern management method significantly mitigates legal risks and saves massive amounts of administrative time for the corporate client.', keyFeatures: ['Automated Policy Management: The compliance software builds entirely bespoke employee handbooks based on standard regulatory guidelines. The computer program generates interactive policy documents and digital acknowledgment forms that accurately reflect the corporate clients core legal requirements. The HR team delivers secure compliance protocols that feel natively built.', 'Secure Onboarding Workflows: The digital system exports the final onboarding checklists in industry-standard formats. These specialized files plug directly into the corporate clients existing HR information system (HRIS) without expensive technical workarounds. The final digital workflows track employee document submissions and background checks flawlessly.', 'Real-Time Regulatory Updates: The software replaces static compliance binders with dynamic, cloud-based policy hubs and automated alerts. The corporate client stops struggling with outdated labor laws and high penalty risks. The human resources team owns a highly secure digital environment that forces the organization to actively maintain legal standards.', 'Rapid Auditing & Revisions: The legal team updates specific compliance elements or safety regulations instantly without rewriting the entire handbook. The computer program regenerates the updated digital policies in a fraction of the time. The compliance director tests different procedural structures and workflows before the final company-wide rollout begins.'], portfolioItems: ['https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f'], relatedServices: ['technical-seo', 'content-seo-blogging', 'local-seo'],
-    productionApproach: generateGenericApproach('SEO Strategy'),
-    faqs: generateGenericFaqs('On-Page SEO')
-  },
-  // { slug: 'technical-seo', title: 'Technical SEO', category: 'SEO Strategy & Keyword Research', description: 'Search bots must crawl a website easily, and broken code blocks this automated process. We fix server errors, and these repairs speed up the page loading times. A fast website retains visitors, so we compress large files and clean the background programming. Proper indexing protocols guide the search engines, and this guarantees all pages appear in the public search results.', keyFeatures: ['Error Repair: The technical team scans the entire website for broken digital links. The experts fix server communication failures to keep the site online. This maintenance ensures a smooth experience for every online visitor. The team repairs exactly 20 technical errors in one hour.', 'Speed Improvements: The computer developers compress heavy code files to reduce the total page size. The staff configures faster caching systems for the main server. These technical steps help the website load instantly on any mobile phone. The new system improves the total loading speed by exactly 40 percent.', 'Indexing Protocols: The SEO experts submit exact site maps to the main search engines. The technical team instructs digital search bots on which pages to scan first. This professional process helps the brand appear in the top search results. The software indexes exactly 100 new web pages in 24 hours.'], portfolioItems: ['https://images.unsplash.com/photo-1555066931-4365d14bab8c', 'https://images.unsplash.com/photo-1504639725590-34d0984388bd'], relatedServices: ['on-page-seo-optimization', 'corporate-business-websites', 'seo-analytics-reporting'],
-  //   productionApproach: generateGenericApproach('SEO Strategy'),
-  //   faqs: generateGenericFaqs('Technical SEO')
-  // },
-  // { slug: 'content-seo-blogging', title: 'Content SEO & Blogging', category: 'SEO Strategy & Keyword Research', description: 'Search algorithms reward websites that publish high-quality written material regularly. We draft informative articles focused on specific topics, and these pages attract consistent readers. Good writing establishes authority in a specific industry, so we hire experienced writers for every project. A consistent publishing schedule builds trust, and the website traffic grows steadily over time.', keyFeatures: ['Topic Planning: The content team builds exact monthly schedules for the company blog. The experts assign specific target keywords to every new article. This organized plan ensures the writers produce relevant content for the search engines. The staff develops a complete 12-month strategy in exactly one work week.', 'Article Writing: The professional writers draft high-quality blog posts for the business. The creative team matches the exact corporate brand voice in every single paragraph. This clear writing builds immediate trust with the human readers. The team produces a clean 1,500-word article in exactly 48 hours.', 'Internal Linking: The digital staff connects related articles together with smart text links. This organized system keeps the readers on the website for a much longer time. The strategy helps the human visitors find more helpful information easily. The internal links increase the total session time by exactly 25 percent.'], portfolioItems: ['https://images.unsplash.com/photo-1499750310107-5fef28a66643', 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40'], relatedServices: ['on-page-seo-optimization', 'content-strategy-brand-communication', 'off-page-seo-link-building'],
-  //   productionApproach: generateGenericApproach('SEO Strategy'),
-  //   faqs: generateGenericFaqs('Content SEO')
-  // },
-  // { slug: 'off-page-seo-link-building', title: 'Off-Page SEO & Link Building', category: 'SEO Strategy & Keyword Research', description: 'Search engines measure trust by counting links from external websites. We manage digital outreach campaigns, and we secure links from respected industry publishers. A strong external profile raises the overall domain authority, so the website ranks higher for competitive phrases. Bad links damage website reputation, and we remove harmful connections quickly.', keyFeatures: ['Outreach Campaigns: The marketing team contacts independent website owners across the internet. The experts negotiate exact placement for informative articles on these pages. This direct outreach builds strong authority for the corporate website. The staff secures exactly 15 new content placements in one month.', 'Digital PR: The PR team distributes positive company news to digital publishers. The writers earn valuable brand mentions from major media platforms. This public strategy puts the business directly in front of a massive audience. The brand reaches exactly 10,000 new readers in a single week.', 'Profile Audits: The technical experts scan the main domain for dangerous spam connections. The team asks the search engines to ignore these bad digital links immediately. This careful cleanup protects the website from strict search penalties. The software removes exactly 50 harmful connections in just two hours.'], portfolioItems: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f'], relatedServices: ['content-seo-blogging', 'on-page-seo-optimization', 'local-seo'],
-  //   productionApproach: generateGenericApproach('SEO Strategy'),
-  //   faqs: generateGenericFaqs('Link Building')
-  // },
-  // { slug: 'local-seo', title: 'Local SEO', category: 'SEO Strategy & Keyword Research', description: 'Nearby customers search for local services daily, and businesses must appear in regional map results. We update local search profiles, so regional buyers find the exact store location easily. Physical stores need foot traffic, and correct contact information brings customers to the front door. We standardise business directories, and we verify accurate phone numbers across the internet.', keyFeatures: ['Map Updates: The local SEO team configures the main business profile on the digital map. The experts add the precise operating hours for the physical store. This accurate data helps the local customers find the exact shop location easily. The final update goes live on the internet in exactly 24 hours.', 'Directory Listings: The digital team submits the company details to large regional databases. The staff ensures the exact name and phone number match everywhere online. This strict uniformity builds major trust with the digital search algorithms. The business appears in exactly 50 new local directories in one week.', 'Review Management: The marketing staff responds directly to all recent customer reviews. The team flags inappropriate or fake comments for immediate removal from the public page. This active management protects the reputation of the local business. The brand improves the total star rating by exactly 15 percent.'], portfolioItems: ['https://images.unsplash.com/photo-1524661135-423995f22d0b', 'https://images.unsplash.com/photo-1519389950473-47ba0277781c'], relatedServices: ['on-page-seo-optimization', 'off-page-seo-link-building', 'social-media-management'],
-  //   productionApproach: generateGenericApproach('SEO Strategy'),
-  //   faqs: generateGenericFaqs('Local SEO')
-  // },
-  // { slug: 'seo-analytics-reporting', title: 'SEO Analytics & Reporting', category: 'SEO Strategy & Keyword Research', description: 'Marketing campaigns require exact measurement to prove their financial value. We install tracking software on the website, and this program records every visitor interaction. Data reveals which pages perform the best, so we direct resources to the most profitable areas. Clear reports remove the guesswork, and business owners make better decisions based on hard numbers.', keyFeatures: ['Traffic Monitoring: The technical team records the total number of daily visitors on the website. The experts track the geographical locations of every user on the digital map. This specific data shows exactly where the target audience lives. The marketing team identifies 500 new visitors from specific regions every single day.', 'Conversion Tracking: The marketing staff measures the total number of newsletter signups on the screen. The team tracks the exact online product sales for every digital campaign. These precise metrics show the financial success of the current strategy. The business increases the total conversion rate by exactly 22 percent.', 'Custom Dashboards: The design team builds private visual charts for the corporate client. The business leaders access this live data at any time through a secure digital portal. This dashboard displays the most important business metrics in one clear place. The staff updates the final charts in exactly five minutes.'], portfolioItems: ['https://images.unsplash.com/photo-1551288049-bebda4e38f71', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f'], relatedServices: ['technical-seo', 'roi-driver-marketing', 'performance-marketing-paid-ads'],
-  //   productionApproach: generateGenericApproach('SEO Strategy'),
-  //   faqs: generateGenericFaqs('SEO Analytics')
-  // },
-  // { slug: 'ai-powered-seo', title: 'AI-Powered SEO', category: 'SEO Strategy & Keyword Research', description: 'Algorithmic tools process massive amounts of search data in seconds. We deploy machine learning software, and these systems identify hidden ranking opportunities. The technology analyzes competitor content instantly, so we adjust our writing strategies based on exact mathematics. Speed creates a massive advantage, and our campaigns adapt to market changes rapidly.', keyFeatures: ['Trend Prediction: The smart software forecasts future search patterns for the industry. The team captures relevant traffic before the competition notices the change. This proactive strategy puts the brand at the top of the search results. The system identifies exactly 10 new market trends every month.', 'Automated Audits: The digital system scans the entire website every single day. The computer software alerts the technical team to any errors instantly. This fast notification helps the staff fix broken links and slow pages immediately. The automated tool prevents exactly 100 percent of long-term server downtime.', 'Model Generation: The AI system creates detailed content outlines very rapidly. The professional writers expand these structures into full articles for the blog. This efficient process allows the team to finish more work in less time. The creative staff produces exactly 20 new content drafts every week.'], portfolioItems: ['https://images.unsplash.com/photo-1677442136019-21780ecad995', 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485'], relatedServices: ['content-seo-blogging', 'technical-seo', 'ai-driven-digital-marketing'],
-  //   productionApproach: generateGenericApproach('SEO Strategy'),
-  //   faqs: generateGenericFaqs('AI-Powered SEO')
-  // },
-  // { slug: 'performance-marketing-paid-ads', title: 'Performance Marketing & Paid Ads', category: 'SEO Strategy & Keyword Research', description: 'Paid advertising guarantees immediate visibility on major search networks. We design targeted campaigns, and we control the financial spend precisely. The advertisements appear only for highly qualified buyers, so the daily budget generates a measurable financial profit. Every advertising dollar must produce a clear return, and we pause any unprofitable digital campaigns immediately.', keyFeatures: ['Budget Control: The marketing team sets strict daily spending limits for the advertising account. The digital campaigns never exceed the approved finances for the month. This careful management protects the business from unexpected marketing costs. The financial department saves exactly 500 dollars every single week.', 'Audience Targeting: The digital experts filter the online viewers by exact geographic location. The software displays digital ads only to interested buyers in the market. This precise strategy prevents the brand from wasting money on irrelevant clicks. The business reaches exactly 1,000 qualified prospects in just 24 hours.', 'Conversion Tracking: The data analysts measure the final sales numbers from the digital campaigns. The technical team calculates the exact return on investment for the business. This clear reporting shows the true financial success of the online advertisements. The marketing staff increases the total profit margin by exactly 18 percent.'], portfolioItems: ['https://images.unsplash.com/photo-1460925895917-afdab827c52f', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71'], relatedServices: ['landing-pages-conversion-funnels', 'roi-driver-marketing', 'seo-analytics-reporting'],
-  //   productionApproach: generateGenericApproach('SEO Strategy'),
-  //   faqs: generateGenericFaqs('Performance Marketing')
-  // },
-
-  // // MANPOWER OUTSOURCING
-  // { slug: 'dedicated-resource-hiring', title: 'Dedicated Resource Hiring', category: 'Manpower Outsourcing', description: 'We provide dedicated resources for your daily business projects. These trained professionals work directly with your internal team. This direct working relationship produces better results for the client. We maintain a large talent pool across multiple different industries. You pick the exact digital skills for your business. Here are the details about our staff.', keyFeatures: ['Content Creators: Our writers have five years of experience in the technology industry. They know search engine rules and plain text guidelines. They write 10 new blog posts every week. They plan exact content schedules for the whole year.', 'Animators: The design team holds degrees in digital arts. They know motion physics and frame timing. They create custom visual elements for television commercials. They deliver five completed videos every single month.', 'E-Learning Experts: Our instructional designers worked in the education sector for eight years. They know adult learning theories and multimedia design. They build interactive digital courses for corporate training programs. They test every module on 50 different human users.', 'Software Developers: The computer engineers mastered 10 different programming languages. They know secure coding practices and database architecture. They build custom web applications for retail businesses. They fix 100 percent of reported software bugs within two days.'], portfolioItems: ['https://images.unsplash.com/photo-1522071820081-009f0129c71c', 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf'], relatedServices: ['web-app-development-resources', 'digital-marketing-seo-experts', 'branding-creative-team'],
-  //   productionApproach: generateGenericApproach('Manpower Outsourcing'),
-  //   faqs: generateGenericFaqs('Dedicated Resource Hiring')
-  // },
-  // { slug: 'video-production-animation-resources', title: 'Video Production & Animation Resources', category: 'Manpower Outsourcing', description: 'The production experts handle both live-action film editing and custom digital animation sequences. We place motion designers into corporate marketing teams, and then they create engaging short digital clips. Historical storytelling requires exact visual references, and our remote artists recreate period details accurately. The team manages heavy video files securely, and they deliver final rendered media on a strict weekly schedule.', keyFeatures: ['Cinematic Editing: The video editors cut raw footage with high precision. The team applies professional color grading to the final digital files. This process creates a consistent and high-quality look for the entire project. The creative staff finishes the final edit in exactly two business days.', 'Motion Graphics: The digital artists animate text elements smoothly on the screen. The production team designs custom visual transitions between each scene. These dynamic graphics keep the viewers interested in the message. The designers create exactly 10 unique motion elements for the brand.', 'Audio Mixing: The sound engineers balance the spoken voice recordings for total clarity. The technical team adds appropriate background sound effects to the video. This professional mixing ensures the message is easy to hear and understand. The staff completes the final audio track in exactly four hours.'], portfolioItems: ['https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d', 'https://images.unsplash.com/photo-1536240478700-b869070f9279'], relatedServices: ['dedicated-resource-hiring', 'motion-graphics-vfx', '2d-3d-story-videos'],
-  //   productionApproach: generateGenericApproach('Manpower Outsourcing'),
-  //   faqs: generateGenericFaqs('Video Production Resources')
-  // },
-  // { slug: 'web-app-development-resources', title: 'Web & App Development Resources', category: 'Manpower Outsourcing', description: 'Custom software requires specialized programming knowledge, and hiring local developers costs companies too much money. We source dedicated remote programmers, and these technical experts build highly stable digital platforms. Good code prevents future application crashes, so our developers follow strict structural programming rules. A dedicated technical team launches digital products faster, and they provide ongoing maintenance after the initial release.', keyFeatures: ['App Creation: The developers code custom mobile applications for the brand. The technical team deploys these programs to the major digital software storefronts. This direct access helps the business reach the exact target audience. The creators launch exactly three new apps every year.', 'Web Platforms: The engineering staff builds custom websites for corporate clients. The programmers write the code for complex financial payment systems. The secure software processes the daily transactions safely. The team finishes a new web platform in exactly 30 days.', 'Code Testing: The quality team runs automated testing scripts on the main server. The experts repair dangerous security flaws quickly. This fast action protects the private data of the human users. The software finds exactly 50 hidden code errors in one hour.'], portfolioItems: ['https://images.unsplash.com/photo-1498050108023-c5249f4df085', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c'], relatedServices: ['dedicated-resource-hiring', 'corporate-business-websites', 'ui-ux-design-prototyping'],
-  //   productionApproach: generateGenericApproach('Manpower Outsourcing'),
-  //   faqs: generateGenericFaqs('Web & App Development Resources')
-  // },
-  // { slug: 'digital-marketing-seo-experts', title: 'Digital Marketing & SEO Experts', category: 'Manpower Outsourcing', description: 'Digital marketing requires constant active monitoring, and search algorithms change their ranking rules frequently. We supply dedicated marketing experts, and these trained professionals execute targeted online promotional campaigns. A specialized marketer understands complex data patterns, so they adjust strategies based on real consumer numbers. Dedicated attention lowers customer acquisition costs, and this steady focus increases overall corporate profitability.', keyFeatures: ['Search Formatting: The digital team adjusts the text on the corporate website. The writers format the pages for the major search engines. This clear structure brings new human readers to the brand. The experts improve the organic rank by exactly 15 positions.', 'Ad Management: The marketing staff runs paid digital campaigns for the business. The financial experts lower the average cost per click. This direct strategy saves money for the corporate client. The team reduces the total advertising spend by 20 percent.', 'Data Reporting: The data analysts track the daily website traffic numbers. The design team builds custom visual dashboards for the client. The business leaders read this clear information on their screens. The software updates the exact traffic numbers every five minutes.'], portfolioItems: ['https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f'], relatedServices: ['dedicated-resource-hiring', 'performance-marketing-paid-ads', 'social-media-management'],
-  //   productionApproach: generateGenericApproach('Manpower Outsourcing'),
-  //   faqs: generateGenericFaqs('Digital Marketing Experts')
-  // },
-  // { slug: 'elearning-instructional-design-experts', title: 'eLearning & Instructional Design Experts', category: 'Manpower Outsourcing', description: 'Online education requires structured lesson plans, and digital learning platforms need interactive course content. We provide dedicated instructional designers, and these educational experts build comprehensive learning modules. Good course design keeps modern students engaged, so our professionals add multimedia elements to the curriculum. A dedicated educational team standardizes corporate training, and they produce materials that teach complex topics clearly.', keyFeatures: ['Curriculum Planning: The education team plans the entire course structure. The experts organize the daily lessons in a logical sequence. This clear map guides the students through the learning material. The staff finishes a complete 10-week syllabus in exactly five days.', 'Module Creation: The design staff builds interactive slide presentations for the class. The audio engineers add professional voice narration to the digital materials. This visual presentation keeps the new learners interested in the subject. The team produces exactly 20 new training slides every single week.', 'Assessment Design: The writers draft multiple-choice tests for the chapter. The software engineers program automated grading systems for the students. This fast computer software delivers exact test scores immediately. The system grades exactly 500 student exams in one minute.'], portfolioItems: ['https://images.unsplash.com/photo-1516321318423-f06f85e504b3', 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655'], relatedServices: ['dedicated-resource-hiring', 'animated-elearning-explainers', 'instructor-led-talking-head'],
-  //   productionApproach: generateGenericApproach('Manpower Outsourcing'),
-  //   faqs: generateGenericFaqs('eLearning Experts')
-  // },
-  // { slug: 'ai-automation-specialists', title: 'AI & Automation Specialists', category: 'Manpower Outsourcing', description: 'Manual administrative tasks waste corporate time, and human data entry errors cost businesses money. We supply dedicated automation specialists, and these technical engineers connect disparate software systems together. Automated systems accelerate data processing, so our experts implement machine learning models into daily operations. A dedicated technical resource modernizes the daily workflow, and this automation frees internal staff for higher-level work.', keyFeatures: ['Workflow Automation: The technical team connects different software programs. The system stops all manual data entry on the keyboard. This fast connection saves hours of daily work. The software moves exactly 1,000 files in one minute.', 'Data Processing: The computer engineers add predictive models to the main server. The software automates basic text generation for the writing team. This digital tool helps the staff finish work faster. The system produces exactly 50 new paragraphs every hour.', 'Bot Configuration: The technical staff programs customer service bots for the business. The experts train the software on corporate instructional manuals. This chat program answers simple questions from online buyers. The bot solves exactly 200 common problems every single day.'], portfolioItems: ['https://images.unsplash.com/photo-1677442136019-21780ecad995', 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485'], relatedServices: ['dedicated-resource-hiring', 'ai-driven-digital-marketing', 'ai-powered-seo'],
-  //   productionApproach: generateGenericApproach('Manpower Outsourcing'),
-  //   faqs: generateGenericFaqs('AI & Automation Specialists')
-  // },
-  // { slug: 'branding-creative-team', title: 'Branding & Creative Team', category: 'Manpower Outsourcing', description: 'A strong brand requires continuous visual content, and hiring local designers is expensive for growing businesses. We source dedicated creative professionals, and this artistic talent produces high-quality graphics daily. Consistent design builds consumer trust, so our artists follow corporate style guides precisely. A dedicated creative team handles fast visual revisions, and they supply the marketing department with fresh image assets constantly.', keyFeatures: ['Custom Illustration: The design team draws original brand graphics for the company. We build unique visual assets for specific corporate campaigns. This creative work makes the brand stand out in the market. The artists create exactly 15 new illustrations for the product launch.', 'Ad Design: The creative staff creates digital banner images for online advertising. We format these visuals for 10 different ad network sizes. This careful preparation prevents display issues on digital platforms. The team delivers exactly 50 formatted ads in just 48 hours.', 'Thumbnail Production: The designers create engaging video covers for digital content. These specific images attract immediately. They increase digital click rates by exactly 25 percent. The marketing team tests five different covers for every video.'], portfolioItems: ['https://images.unsplash.com/photo-1561070791-2526d30994b5', 'https://images.unsplash.com/photo-1626785774573-4b799315345d'], relatedServices: ['dedicated-resource-hiring', 'visual-branding-design', 'ui-ux-design-prototyping'],
-  //   productionApproach: generateGenericApproach('Manpower Outsourcing'),
-  //   faqs: generateGenericFaqs('Branding & Creative Team')
-  // }
+  {
+    "title": "Human Resources & Compliance",
+    "slug": "human-resources-compliance",
+    "category": "Human Resources & Compliance",
+    "description": "Many growing businesses struggle to manage complex workforce regulations using outdated, manual paperwork on a very tight operational schedule. The CPUTEK team uses advanced HR frameworks and compliance software to turn complicated legal guidelines into streamlined, automated internal processes. This modern management method significantly mitigates legal risks and saves massive amounts of administrative time for the corporate client.",
+    "keyFeatures": [
+      "Automated Policy Management: The compliance software builds entirely bespoke employee handbooks based on standard regulatory guidelines. The computer program generates interactive policy documents and digital acknowledgment forms that accurately reflect the corporate client's core legal requirements. The HR team delivers secure compliance protocols that feel natively built.",
+      "Secure Onboarding Workflows: The digital system exports the final onboarding checklists in industry-standard formats. These specialized files plug directly into the corporate client's existing HR information system (HRIS) without expensive technical workarounds. The final digital workflows track employee document submissions and background checks flawlessly.",
+      "Real-Time Regulatory Updates: The software replaces static compliance binders with dynamic, cloud-based policy hubs and automated alerts. The corporate client stops struggling with outdated labor laws and high penalty risks. The human resources team owns a highly secure digital environment that forces the organization to actively maintain legal standards.",
+      "Rapid Auditing & Revisions: The legal team updates specific compliance elements or safety regulations instantly without rewriting the entire handbook. The computer program regenerates the updated digital policies in a fraction of the time. The compliance director tests different procedural structures and workflows before the final company-wide rollout begins."
+    ],
+    "productionApproach": {
+      "timeline": "4–8 Weeks",
+      "steps": [
+        {
+          "title": "Discovery & Strategy",
+          "description": "We begin by understanding your core HR objectives, workforce demographic, and specific regulatory requirements to build a tailored compliance strategy."
+        },
+        {
+          "title": "Concept & Planning",
+          "description": "Our team develops initial policy outlines, digital onboarding wireframes, and compliance frameworks to align on the structural and legal direction."
+        },
+        {
+          "title": "Production & Execution",
+          "description": "We execute the plan using industry-leading HR management tools and methodologies, keeping you updated throughout the policy drafting and system development process."
+        },
+        {
+          "title": "Review & Refinement",
+          "description": "You review the functional deliverables, and we make necessary legal adjustments to ensure the final digital product meets your exact corporate and regulatory standards."
+        },
+        {
+          "title": "Final Delivery",
+          "description": "We deliver the finalized HR-ready assets or launch the compliance portal, providing all necessary administrator documentation and technical support."
+        }
+      ],
+      "deliverables": [
+        "Comprehensive HR compliance strategy document",
+        "Source files and final digital policy assets",
+        "HRIS integration and tracking setup",
+        "Post-launch administrator support guide"
+      ],
+      "qualityAssurance": [
+        "Multi-stage internal compliance and legal review process",
+        "Cross-platform document accessibility and usability testing",
+        "Labor law and regulatory compliance check",
+        "Data security and privacy protocol optimization"
+      ]
+    },
+    "faqs": [
+      {
+        "question": "How long does a typical Human Resources & Compliance project take?",
+        "answer": "A typical HR and compliance project takes an estimated 4 to 8 weeks to complete, depending on your organization's regulatory complexity. This comprehensive timeline allows our team to thoroughly handle everything from the initial compliance strategy and policy drafting down to the final HRIS testing and delivery."
+      },
+      {
+        "question": "Do you offer revisions during the process?",
+        "answer": "Yes, we provide a dedicated review and refinement phase where your legal and HR stakeholders can assess the policies and request necessary adjustments to meet your exact standards. Thanks to our agile document management tools, our developers can rapidly modify procedural structures and layouts before the final compliance package is exported."
+      },
+      {
+        "question": "What do you need from us to get started?",
+        "answer": "To begin the discovery and strategy phase, we simply need a clear understanding of your core HR objectives, workforce demographic, and any existing policy materials. This vital information allows our team to build a tailored compliance strategy and immediately start developing the initial outlines and frameworks for your approval."
+      },
+      {
+        "question": "Who owns the final deliverables?",
+        "answer": "Upon project completion and final delivery, your organization takes full ownership of the exact internal rights to all newly developed HR materials and digital workflows. We ensure a smooth handover by providing all final HR-ready assets, digital source files, a comprehensive strategy document, and a post-launch administrator guide."
+      },
+      {
+        "question": "Can you work with our existing internal team?",
+        "answer": "Absolutely, our implementation process is highly collaborative, allowing our team to work alongside your internal HR, legal, and IT staff to perfectly align on the regulatory direction. We keep your team fully updated throughout the production phase while rigorously checking for HRIS compatibility to ensure seamless integration into your existing infrastructure."
+      }
+    ]
+  }
 ];
-
-
-

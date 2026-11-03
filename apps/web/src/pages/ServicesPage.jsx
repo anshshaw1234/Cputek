@@ -1,29 +1,40 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { Video, TrendingUp, Palette, Code, Film, Share2 } from 'lucide-react';
+import { Bot, GraduationCap, Film, Code, Palette, Users } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import ScrollRevealAnimation from '@/components/ScrollRevealAnimation.jsx';
 import ServiceCard from '@/components/ServiceCard.jsx';
 import GlowButton from '@/components/GlowButton.jsx';
 import { useNavigate } from 'react-router-dom';
+import { servicesData } from '@/data/services.js';
+
+const serviceIcons = [
+  <Bot key="ai" className="w-8 h-8" />,
+  <GraduationCap key="training" className="w-8 h-8" />,
+  <Film key="animation" className="w-8 h-8" />,
+  <Code key="software" className="w-8 h-8" />,
+  <Palette key="design" className="w-8 h-8" />,
+  <Users key="hr" className="w-8 h-8" />,
+];
 
 const ServicesPage = () => {
   const navigate = useNavigate();
-  const services = [
-    { id: 'elearning', title: 'E-Learning: Video & Animation', description: 'Create engaging educational content with professional video production and animation services that captivate learners and improve knowledge retention.', icon: <Video className="w-8 h-8" /> },
-    { id: 'digital-marketing', title: 'Digital Marketing', description: 'Drive growth with data-driven marketing strategies across social media, SEO, PPC, and content marketing to reach your target audience effectively.', icon: <TrendingUp className="w-8 h-8" /> },
-    { id: 'graphics-design', title: 'Graphics Design', description: 'Transform your brand with stunning visual designs including logos, branding materials, marketing collateral, and digital assets that resonate with your audience.', icon: <Palette className="w-8 h-8" /> },
-    { id: 'software-development', title: 'Software Development', description: 'Build scalable, robust applications tailored to your business needs using modern technologies, agile methodologies, and industry best practices.', icon: <Code className="w-8 h-8" /> },
-    { id: 'animation', title: 'Animation', description: 'Bring your ideas to life with captivating 2D and 3D animations, motion graphics, and explainer videos that tell compelling stories and engage viewers.', icon: <Film className="w-8 h-8" /> },
-    { id: 'social-media', title: 'Social Media Management', description: 'Build and engage your community with strategic content planning, consistent posting, community management, and detailed analytics across all major platforms.', icon: <Share2 className="w-8 h-8" /> },
-  ];
+  const services = servicesData.map((service, index) => ({
+    id: service.slug,
+    title: service.title,
+    description: service.description,
+    icon: serviceIcons[index],
+  }));
 
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Our Services - CPUtek | Digital Solutions & Creative Services</title>
-        <meta name="description" content="Explore CPUtek's comprehensive digital services including e-learning, digital marketing, graphics design, software development, animation, and social media management." />
+        <title>Our Services - CPUTEK | Digital Solutions & Creative Services</title>
+        <meta
+          name="description"
+          content="Explore CPUTEK services including enterprise AI automation, eLearning, animation, enterprise software, creative design, and HR compliance."
+        />
       </Helmet>
 
       <Header />
@@ -37,7 +48,7 @@ const ServicesPage = () => {
                   Our <span className="text-gradient-primary">Services</span>
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Comprehensive digital solutions designed to help your business grow and succeed in the modern marketplace
+                  Comprehensive digital, creative, training, and enterprise solutions designed around your organization's needs.
                 </p>
               </div>
             </ScrollRevealAnimation>
@@ -60,12 +71,12 @@ const ServicesPage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/[0.02] to-transparent" />
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <ScrollRevealAnimation>
-              <div className="glass-base p-16 rounded-3xl border-primary/20 shadow-[0_0_50px_rgba(255,215,0,0.1)]">
+              <div className="glass-base p-8 md:p-16 rounded-3xl border-primary/20 shadow-[0_0_50px_rgba(255,215,0,0.1)]">
                 <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
                   Need a custom solution?
                 </h2>
                 <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-                  We understand that every business is unique. Let's discuss how we can tailor our services to meet your specific needs and goals.
+                  Tell us about your goals and we'll help shape the right service plan for your team.
                 </p>
                 <GlowButton variant="primary" onClick={() => navigate('/contact')}>
                   Get in Touch

@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="space-y-6">
             <Link to="/" className="inline-block">
               <img 
-                src="https://horizons-cdn.hostinger.com/b8bf1ebc-3a80-4638-bfc9-11e4faae84fe/a9594cf29cb58dea0157717bd1ad142a.png" 
+                src="/images/cputek-logo.jpg"
                 alt="CPUtek Logo" 
                 className="h-12 w-auto hover:scale-105 smooth-transition"
               />
@@ -71,13 +71,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-foreground mb-6 tracking-wide">Services</h3>
             <ul className="space-y-4">
               {[
-                { name: 'AI Solutions & Enterprise Automation', path: '/services/Explore' },
-                {name: 'eLearning & Corporate Training', path: '/services/text-to-video-generation' },
-                {name: 'Animation & Explainer Videos', path: '/services/ai-avatar-presenter-videos' },
-                {name: 'Enterprise Software Development', path: '/services/instructor-led-talking-head' },
-                {name: 'Creative Design & Brand Communication', path: '/services/brand-strategy-identity' },
-                {name: 'Human Resources ad Compliance', path: '/services/social-media-management' },
-                {/* { name: 'Manpower Outsourcing', path: '/services/on-page-seo-optimization' },
+                { name: 'AI Solutions & Enterprise Automation', path: '/services/ai-solutions-enterprise-automation' },
+                {name: 'eLearning & Corporate Training', path: '/services/elearning-corporate-training' },
+                {name: 'Animation & Explainer Videos', path: '/services/animation-explainer-videos' },
+                {name: 'Enterprise Software Development', path: '/services/enterprise-software-development' },
+                {name: 'Creative Design & Brand Communication', path: '/services/creative-design-brand-communication' },
+                {name: 'Human Resources & Compliance', path: '/services/human-resources-compliance' },
+                {/* { name: 'Manpower Outsourcing', path: '/services/human-resources-compliance' },
                 { name: 'Human Resources (HR) Services', path: '/services/dedicated-resource-hiring' } */}
               ].map((item) => (
                 <li key={item.name}>

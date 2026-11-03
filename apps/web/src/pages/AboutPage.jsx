@@ -57,7 +57,7 @@ const AboutPage = () => {
                     </p>
                   </div>
                   <div className="glass-card rounded-2xl aspect-square flex items-center justify-center bg-gradient-to-br from-primary/10 to-transparent border-primary/20">
-                    <img src="https://horizons-cdn.hostinger.com/b8bf1ebc-3a80-4638-bfc9-11e4faae84fe/a9594cf29cb58dea0157717bd1ad142a.png" alt="CPUtek Logo Large" className="w-1/2 opacity-80 drop-shadow-[0_0_30px_rgba(255,215,0,0.3)]" />
+                    <img src="/images/cputek-logo.jpg" alt="CPUtek Logo" className="w-1/2 opacity-80 drop-shadow-[0_0_30px_rgba(255,215,0,0.3)]" />
                   </div>
                 </div>
               </div>

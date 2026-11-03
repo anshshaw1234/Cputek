@@ -6,11 +6,13 @@ import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServiceDetailPage from './pages/ServiceDetailPage';
+import ServicesPage from './pages/ServicesPage';
+import ProductsPage from './pages/ProductsPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import HRServiceDetailPage from './pages/HRServiceDetailPage.jsx';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
 import AdminDashboard from './pages/AdminDashboard';
-// import BlogAdminPage from "./pages/BlogAdminPage.jsx";
 import BlogsPage from "./pages/BlogsPage";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -51,6 +53,9 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><HomePage /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><AboutPage /></PageWrapper>} />
+        <Route path="/products" element={<PageWrapper><ProductsPage /></PageWrapper>} />
+        <Route path="/products/:productId" element={<PageWrapper><ProductDetailPage /></PageWrapper>} />
+        <Route path="/services" element={<PageWrapper><ServicesPage /></PageWrapper>} />
         {/* <Route path="/services/hr/:slug" element={<PageWrapper><HRServiceDetailPage /></PageWrapper>} /> */}
         <Route path="/services/:serviceId" element={<PageWrapper><ServiceDetailPage /></PageWrapper>} />
         <Route path="/careers" element={<PageWrapper><CareersPage /></PageWrapper>} />
@@ -70,7 +75,7 @@ const AnimatedRoutes = () => {
   element={<IndustryDetailPage />}
 />
 <Route
-  path="/blogs/:id"
+  path="/blogs/:slug"
   element={
     <PageWrapper>
       <BlogDetailPage />
@@ -87,16 +92,6 @@ const AnimatedRoutes = () => {
     </ProtectedRoute>
   }
 />
-{/* <Route
-  path="/admin/blogs"
-  element={
-    <ProtectedRoute>
-      <PageWrapper>
-        <BlogAdminPage />
-      </PageWrapper>
-    </ProtectedRoute>
-  }
-/> */}
         {/* Catch-all route for 404s */}
         <Route path="*" element={<PageWrapper><HomePage /></PageWrapper>} />
         

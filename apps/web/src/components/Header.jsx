@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Video, Megaphone, Briefcase, Wand2, PenTool, Film, Layers, FileText, UserCircle, Clapperboard, Mic, Presentation, MonitorPlay, PlayCircle, Target, Palette, Globe, Award, Cpu, Layout, Smartphone, TrendingUp, Share2, Image, Users, MessageSquare, Zap, BarChart, Search, Settings, Edit3, Link as LinkIcon, MapPin, LineChart, MousePointer2, UserPlus, Code, BookOpen, MessageCircle, ArrowRight, KeyRound as UsersRound, GraduationCap, HeartHandshake, ShieldCheck, Bot, UserCheck, Route, MonitorSmartphone, Wrench } from 'lucide-react';
+import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { hrServices } from '@/data/hrServices.js';
 import { industriesData } from "@/data/industries";
+import { productsData } from '@/data/products.js';
+import { servicesData } from '@/data/services.js';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,7 +12,6 @@ const Header = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
-  const [expandedMobileCategory, setExpandedMobileCategory] = useState(null);
   const location = useLocation();
   const headerRef = useRef(null);
 
@@ -29,7 +29,6 @@ const Header = () => {
     setIsServicesOpen(false);
     setIsProductsOpen(false);
     setIsIndustriesOpen(false);
-    setExpandedMobileCategory(null);
   }, [location]);
 
   useEffect(() => {
@@ -44,87 +43,7 @@ const Header = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Map HR services to the format expected by the menu
-  const hrServiceItems = hrServices.map(service => {
-    let icon;
-    switch (service.id) {
-      case 'hr-ops-payroll': icon = <UsersRound className="w-4 h-4" />; break;
-      case 'learning-development': icon = <GraduationCap className="w-4 h-4" />; break;
-      case 'employee-engagement': icon = <HeartHandshake className="w-4 h-4" />; break;
-      case 'hr-compliance': icon = <ShieldCheck className="w-4 h-4" />; break;
-      case 'hr-tech-ai': icon = <Bot className="w-4 h-4" />; break;
-      case 'pre-onboarding': icon = <UserCheck className="w-4 h-4" />; break;
-      case 'structured-onboarding': icon = <Route className="w-4 h-4" />; break;
-      case 'elearning-onboarding': icon = <MonitorSmartphone className="w-4 h-4" />; break;
-      case 'tool-process-training': icon = <Wrench className="w-4 h-4" />; break;
-      default: icon = <Users className="w-4 h-4" />;
-    }
-    return {
-      name: service.title,
-      icon,
-      path: `/services/hr/${service.slug}`,
-      description: service.shortDescription
-    };
-  });
-
-  const serviceCategories = [
-    {
-      id: 'video-services',
-      name: 'AI Solutions & Enterprise Automation',
-      items: [
-        { name: 'Explore', icon: <Video className="w-4 h-4" />, path: '/services/Explore' },
-      ]
-    },
-    {
-      id: 'ai-video-audio',
-      name: 'eLearning & Corporate Training',
-      items: [
-        { name: 'Explore', icon: <FileText className="w-4 h-4" />, path: '/services/text-to-video-generation' },
-      ]
-    },
-    {
-      id: 'elearning-training',
-      name: 'Animation & Explainer Videos',
-      items: [
-        { name: 'Explore', icon: <Presentation className="w-4 h-4" />, path: '/services/instructor-led-talking-head' },
-      ]
-    },
-    {
-      id: 'digital-marketing',
-      name: 'Enterprise Software Development',
-      items: [
-        { name: 'Explore', icon: <Target className="w-4 h-4" />, path: '/services/brand-strategy-identity' },
-      ]
-    },
-    {
-      id: 'digital-media',
-      name: 'Creative Design & Brand Communication',
-      items: [
-        { name: 'Explore', icon: <Share2 className="w-4 h-4" />, path: '/services/social-media-management' },
-      ]
-    },
-    {
-      id: 'seo-strategy',
-      name: 'Human Resources ad Compliance',
-      items: [
-        { name: 'Explore', icon: <Search className="w-4 h-4" />, path: '/services/on-page-seo-optimization' },
-      ]
-    },
-  ];
-
-  // Flat list used directly by the Industries dropdown (single category, so no need for a grid layout)
-  const industryItems = industriesData.map((industry) => ({
-    name: industry.title,
-    icon: <Briefcase className="w-4 h-4" />,
-    path: `/industries/${industry.slug}`,
-    description: industry.description,
-  }));
-
   const isActive = (path) => location.pathname === path || location.pathname.startsWith(path + '/');
-
-  const toggleMobileCategory = (id) => {
-    setExpandedMobileCategory(expandedMobileCategory === id ? null : id);
-  };
 
   return (
     <header
@@ -139,7 +58,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-24">
           <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
             <img
-              src="https://horizons-cdn.hostinger.com/b8bf1ebc-3a80-4638-bfc9-11e4faae84fe/a9594cf29cb58dea0157717bd1ad142a.png"
+              src="/images/cputek-logo.jpg"
               alt="CPUtek Logo"
               className="h-10 md:h-12 w-auto group-hover:scale-105 group-hover:drop-shadow-[0_0_15px_rgba(255,215,0,0.5)] smooth-transition"
             />
@@ -154,13 +73,74 @@ const Header = () => {
               About
             </Link>
 
-            {/* Services — full-width mega menu (6 categories, fills the grid nicely) */}
+            {/* Products dropdown */}
+            <div
+              className="relative py-4"
+              onMouseEnter={() => { setIsProductsOpen(true); setIsServicesOpen(false); setIsIndustriesOpen(false); }}
+              onMouseLeave={() => setIsProductsOpen(false)}
+            >
+              <button
+                type="button"
+                aria-expanded={isProductsOpen}
+                aria-haspopup="true"
+                onClick={() => setIsProductsOpen(!isProductsOpen)}
+                className={`flex items-center gap-1 text-sm font-medium smooth-transition ${isProductsOpen || isActive('/products') ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+              >
+                Products
+                <ChevronDown className={`w-4 h-4 smooth-transition ${isProductsOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              <div className="hidden lg:block">
+                <AnimatePresence>
+                  {isProductsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2, ease: 'easeInOut' }}
+                      className="absolute top-full left-0 mt-1 w-[420px] max-h-[70vh] overflow-y-auto bg-black/85 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] p-5"
+                    >
+                      <h3 className="text-lg font-bold text-primary mb-3 pb-3 border-b border-white/10">
+                        Products
+                      </h3>
+                      <div className="flex flex-col gap-1">
+                        {productsData.map((product) => (
+                          <div key={product.id} className="flex items-center justify-between gap-4 rounded-lg p-3 hover:bg-white/10 smooth-transition">
+                            <span className="text-sm font-medium text-foreground">{product.title}</span>
+                            <Link
+                              to={`/products/${product.id}`}
+                              className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-primary hover:text-primary/80"
+                              onClick={() => setIsProductsOpen(false)}
+                            >
+                              Explore <ArrowRight className="h-3.5 w-3.5" />
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                      <Link
+                        to="/products"
+                        className="mt-3 block border-t border-white/10 pt-4 px-3 text-sm font-semibold text-primary hover:text-primary/80 smooth-transition"
+                        onClick={() => setIsProductsOpen(false)}
+                      >
+                        Explore all products
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Services dropdown */}
             <div
               className="relative py-4"
               onMouseEnter={() => { setIsServicesOpen(true); setIsProductsOpen(false); setIsIndustriesOpen(false); }}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <button
+                type="button"
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className={`flex items-center gap-1 text-sm font-medium smooth-transition ${isServicesOpen || isActive('/services') ? 'text-primary' : 'text-foreground hover:text-primary'}`}
               >
                 Services
@@ -175,46 +155,33 @@ const Header = () => {
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="fixed left-0 top-24 w-full bg-black/80 backdrop-blur-2xl border-b border-white/20 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] max-h-[calc(100vh-6rem)] overflow-y-auto"
-                      onMouseEnter={() => setIsServicesOpen(true)}
-                      onMouseLeave={() => setIsServicesOpen(false)}
+                      transition={{ duration: 0.2, ease: "easeInOut" }}
+                      className="absolute top-full left-0 mt-1 w-[420px] max-h-[70vh] overflow-y-auto bg-black/85 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] p-5"
                     >
-                      <div className="max-w-[1400px] mx-auto px-6 py-8 lg:px-8 lg:py-10">
-                        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-8">
-                          {serviceCategories.map((category) => (
-                            <div key={category.id} className="glass-card bg-white/5 border-white/10 p-6 rounded-2xl flex flex-col h-full hover:bg-white/10 hover:border-white/20 transition-all duration-300">
-                              <h3 className="text-lg font-bold text-primary mb-5 pb-3 border-b border-white/10">
-                                {category.name}
-                              </h3>
-                              <div className="flex flex-col gap-2 flex-grow">
-                                {category.items.map((item, idx) => (
-                                  <Link
-                                    key={idx}
-                                    to={item.path}
-                                    className="flex flex-col gap-1 p-3 rounded-lg group hover:bg-white/10 hover:shadow-[0_2px_10px_rgba(255,215,0,0.1)] smooth-transition"
-                                    onClick={() => setIsServicesOpen(false)}
-                                  >
-                                    <div className="flex items-center gap-3">
-                                      <div className="text-primary/70 group-hover:text-primary group-hover:scale-110 smooth-transition flex-shrink-0">
-                                        {item.icon}
-                                      </div>
-                                      <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground smooth-transition leading-tight">
-                                        {item.name}
-                                      </span>
-                                    </div>
-                                    {item.description && (
-                                      <span className="text-xs text-muted-foreground/70 pl-7 line-clamp-2">
-                                        {item.description}
-                                      </span>
-                                    )}
-                                  </Link>
-                                ))}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
+                      <h3 className="text-lg font-bold text-primary mb-3 pb-3 border-b border-white/10">
+                        Services
+                      </h3>
+                      <div className="flex flex-col gap-1">
+                        {servicesData.map((service) => (
+                          <div key={service.slug} className="flex items-center justify-between gap-4 rounded-lg p-3 hover:bg-white/10 smooth-transition">
+                            <span className="text-sm font-medium text-foreground">{service.title}</span>
+                            <Link
+                              to={`/services/${service.slug}`}
+                              className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-primary hover:text-primary/80"
+                              onClick={() => setIsServicesOpen(false)}
+                            >
+                              Explore <ArrowRight className="h-3.5 w-3.5" />
+                            </Link>
+                          </div>
+                        ))}
                       </div>
+                      <Link
+                        to="/services"
+                        className="mt-3 block border-t border-white/10 pt-4 px-3 text-sm font-semibold text-primary hover:text-primary/80 smooth-transition"
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        Explore all services
+                      </Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -232,6 +199,9 @@ const Header = () => {
               onMouseLeave={() => setIsIndustriesOpen(false)}
             >
               <button
+                type="button"
+                aria-expanded={isIndustriesOpen}
+                aria-haspopup="true"
                 className={`flex items-center gap-1 text-sm font-medium smooth-transition ${
                   isIndustriesOpen || isActive('/industries') ? 'text-primary' : 'text-foreground hover:text-primary'
                 }`}
@@ -256,27 +226,17 @@ const Header = () => {
                         Industries
                       </h3>
                       <div className="flex flex-col gap-2">
-                        {industryItems.map((item, idx) => (
-                          <Link
-                            key={idx}
-                            to={item.path}
-                            className="flex flex-col gap-1 p-3 rounded-lg group hover:bg-white/10 hover:shadow-[0_2px_10px_rgba(255,215,0,0.1)] smooth-transition"
-                            onClick={() => setIsIndustriesOpen(false)}
-                          >
-                            <div className="flex items-center gap-3">
-                              <div className="text-primary/70 group-hover:text-primary group-hover:scale-110 smooth-transition flex-shrink-0">
-                                {item.icon}
-                              </div>
-                              <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground smooth-transition leading-tight">
-                                {item.name}
-                              </span>
-                            </div>
-                            {item.description && (
-                              <span className="text-xs text-muted-foreground/70 pl-7 line-clamp-2">
-                                {item.description}
-                              </span>
-                            )}
-                          </Link>
+                        {industriesData.map((industry) => (
+                          <div key={industry.slug} className="flex items-center justify-between gap-4 rounded-lg p-3 hover:bg-white/10 smooth-transition">
+                            <span className="text-sm font-medium text-foreground">{industry.title}</span>
+                            <Link
+                              to={`/industries/${industry.slug}`}
+                              className="inline-flex shrink-0 items-center gap-1 text-xs font-semibold text-primary hover:text-primary/80"
+                              onClick={() => setIsIndustriesOpen(false)}
+                            >
+                              Explore <ArrowRight className="h-3.5 w-3.5" />
+                            </Link>
+                          </div>
                         ))}
                       </div>
                     </motion.div>
@@ -322,9 +282,57 @@ const Header = () => {
               <Link to="/" className="block px-4 py-3 text-lg font-medium text-foreground hover:text-primary hover:bg-white/5 rounded-xl smooth-transition min-h-[44px]" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
               <Link to="/about" className="block px-4 py-3 text-lg font-medium text-foreground hover:text-primary hover:bg-white/5 rounded-xl smooth-transition min-h-[44px]" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
 
+              {/* Products Mobile Accordion */}
+              <div className="space-y-1">
+                <button
+                  type="button"
+                  aria-expanded={isProductsOpen}
+                  onClick={() => { setIsProductsOpen(!isProductsOpen); setIsServicesOpen(false); setIsIndustriesOpen(false); }}
+                  className="w-full flex items-center justify-between px-4 py-3 text-lg font-medium text-foreground hover:text-primary hover:bg-white/5 rounded-xl smooth-transition min-h-[44px]"
+                >
+                  Products
+                  <ChevronDown className={`w-5 h-5 smooth-transition ${isProductsOpen ? 'rotate-180 text-primary' : ''}`} />
+                </button>
+
+                <AnimatePresence>
+                  {isProductsOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pl-4 pr-2 py-3 space-y-1 border-l-2 border-white/10 ml-6 my-2">
+                        {productsData.map((product) => (
+                          <div key={product.id} className="flex items-center justify-between gap-3 rounded-lg px-3 py-2.5 hover:bg-white/5">
+                            <span className="text-sm font-medium text-foreground">{product.title}</span>
+                            <Link
+                              to={`/products/${product.id}`}
+                              className="inline-flex min-h-[44px] shrink-0 items-center gap-1 text-xs font-semibold text-primary"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              Explore <ArrowRight className="h-3.5 w-3.5" />
+                            </Link>
+                          </div>
+                        ))}
+                        <Link
+                          to="/products"
+                          className="block px-3 py-2.5 text-sm font-semibold text-primary hover:bg-white/5 rounded-lg smooth-transition min-h-[44px]"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Explore all products
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               {/* Services Mobile Accordion */}
               <div className="space-y-1">
                 <button
+                  type="button"
+                  aria-expanded={isServicesOpen}
                   onClick={() => { setIsServicesOpen(!isServicesOpen); setIsProductsOpen(false); setIsIndustriesOpen(false); }}
                   className="w-full flex items-center justify-between px-4 py-3 text-lg font-medium text-foreground hover:text-primary hover:bg-white/5 rounded-xl smooth-transition min-h-[44px]"
                 >
@@ -340,50 +348,26 @@ const Header = () => {
                       exit={{ opacity: 0, height: 0 }}
                       className="overflow-hidden"
                     >
-                      <div className="pl-4 pr-2 py-4 space-y-6 border-l-2 border-white/10 ml-6 my-2">
-                        {serviceCategories.map((category) => (
-                          <div key={category.id} className="space-y-1">
-                            <button
-                              onClick={() => toggleMobileCategory(category.id)}
-                              className="w-full flex items-center justify-between py-2 text-base font-medium text-foreground hover:text-primary smooth-transition min-h-[44px]"
+                      <div className="pl-4 pr-2 py-3 space-y-1 border-l-2 border-white/10 ml-6 my-2">
+                        {servicesData.map((service) => (
+                          <div key={service.slug} className="flex items-center justify-between gap-3 rounded-lg px-3 py-2.5 hover:bg-white/5">
+                            <span className="text-sm font-medium text-foreground">{service.title}</span>
+                            <Link
+                              to={`/services/${service.slug}`}
+                              className="inline-flex min-h-[44px] shrink-0 items-center gap-1 text-xs font-semibold text-primary"
+                              onClick={() => setIsMobileMenuOpen(false)}
                             >
-                              {category.name}
-                              <ChevronDown className={`w-4 h-4 smooth-transition ${expandedMobileCategory === category.id ? 'rotate-180 text-primary' : ''}`} />
-                            </button>
-
-                            <AnimatePresence>
-                              {expandedMobileCategory === category.id && (
-                                <motion.div
-                                  initial={{ opacity: 0, height: 0 }}
-                                  animate={{ opacity: 1, height: 'auto' }}
-                                  exit={{ opacity: 0, height: 0 }}
-                                  className="overflow-hidden"
-                                >
-                                  <div className="pl-2 py-2 space-y-2 border-l border-white/10 ml-2 mt-2">
-                                    {category.items.map((item, idx) => (
-                                      <Link
-                                        key={idx}
-                                        to={item.path}
-                                        className="flex flex-col gap-1 px-3 py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-white/5 rounded-lg smooth-transition min-h-[44px]"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                      >
-                                        <div className="flex items-center gap-3">
-                                          <span className="text-primary/70">{item.icon}</span>
-                                          <span className="leading-tight font-medium">{item.name}</span>
-                                        </div>
-                                        {item.description && (
-                                          <span className="text-xs text-muted-foreground/70 pl-7 line-clamp-2">
-                                            {item.description}
-                                          </span>
-                                        )}
-                                      </Link>
-                                    ))}
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
+                              Explore <ArrowRight className="h-3.5 w-3.5" />
+                            </Link>
                           </div>
                         ))}
+                        <Link
+                          to="/services"
+                          className="block px-3 py-2.5 text-sm font-semibold text-primary hover:bg-white/5 rounded-lg smooth-transition min-h-[44px]"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Explore all services
+                        </Link>
                       </div>
                     </motion.div>
                   )}
@@ -409,32 +393,26 @@ const Header = () => {
                       className="overflow-hidden"
                     >
                       <div className="pl-4 pr-2 py-4 space-y-2 border-l-2 border-white/10 ml-6 my-2">
-                        {industryItems.map((item, idx) => (
-                          <Link
-                            key={idx}
-                            to={item.path}
-                            className="flex flex-col gap-1 px-3 py-2.5 text-sm text-muted-foreground hover:text-primary hover:bg-white/5 rounded-lg smooth-transition min-h-[44px]"
-                            onClick={() => {
-                              setIsMobileMenuOpen(false);
-                              setIsIndustriesOpen(false);
-                            }}
-                          >
-                            <div className="flex items-center gap-3">
-                              <span className="text-primary/70">{item.icon}</span>
-                              <span className="leading-tight font-medium">{item.name}</span>
-                            </div>
-                            {item.description && (
-                              <span className="text-xs text-muted-foreground/70 pl-7 line-clamp-2">
-                                {item.description}
-                              </span>
-                            )}
-                          </Link>
+                        {industriesData.map((industry) => (
+                          <div key={industry.slug} className="flex items-center justify-between gap-3 rounded-lg px-3 py-2.5 hover:bg-white/5">
+                            <span className="text-sm font-medium text-foreground">{industry.title}</span>
+                            <Link
+                              to={`/industries/${industry.slug}`}
+                              className="inline-flex min-h-[44px] shrink-0 items-center gap-1 text-xs font-semibold text-primary"
+                              onClick={() => {
+                                setIsMobileMenuOpen(false);
+                                setIsIndustriesOpen(false);
+                              }}
+                            >
+                              Explore <ArrowRight className="h-3.5 w-3.5" />
+                            </Link>
+                          </div>
                         ))}
                       </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div> */}
+              </div>
 
               <Link
                 to="/blogs"

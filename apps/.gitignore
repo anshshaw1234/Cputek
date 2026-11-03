@@ -11,6 +11,8 @@ dist/
 .env.*
 **/.env
 **/.env.*
+!.env.example
+!**/.env.example
 
 # Google service account
 google-service-account.json

@@ -4,7 +4,7 @@ export const industriesData = [
     title: "Manufacturing",
     category: "Industrial",
     description:
-      "Manufacturing companies face daily challenges in workforce onboarding, and they struggle with safety compliance. Factory managers must transfer maintenance knowledge to new workers. CPUTEK helps manufacturers convert technical documents into interactive learning modules.",
+      "Manufacturing companies face daily challenges in workforce onboarding, and they struggle with safety compliance. Factory managers must transfer maintenance knowledge to new workers. CPUTEK helps manufacturers convert technical documents into interactive learning modules.We build digital video platforms directly from operational manuals. This technical learning content improves workforce readiness across the industrial sector.",
     overview:
       "Manufacturing companies face daily challenges in workforce onboarding, and they struggle with safety compliance. Factory managers must transfer maintenance knowledge to new workers. CPUTEK helps manufacturers convert technical documents into interactive learning modules. We build digital video platforms directly from operational manuals. This technical learning content improves workforce readiness across the industrial sector.",
     keyFeatures: [
@@ -106,7 +106,7 @@ export const industriesData = [
     title: "Healthcare & Hospitals",
     category: "Healthcare",
     description:
-      "Healthcare organizations need continuous education for their doctors and support staff. Hospital administrators must educate patients on daily medical routines, so they rely on visual materials. CPUTEK develops computer-generated training videos and accurate medical animations.",
+      "Healthcare organizations need continuous education for their doctors and support staff. Hospital administrators must educate patients on daily medical routines, so they rely on visual materials. CPUTEK develops computer-generated training videos and accurate medical animations.We build patient awareness content, and our team creates diagnostic learning resources for medical organizations.",
     overview:
       "Healthcare organizations need continuous education for their doctors and support staff. Hospital administrators must educate patients on daily medical routines, so they rely on visual materials. CPUTEK develops computer-generated training videos and accurate medical animations. We build patient awareness content, and our team creates diagnostic learning resources for medical organizations.",
     keyFeatures: [
@@ -208,7 +208,7 @@ export const industriesData = [
     title: "Banking, Financial Services & Insurance (BFSI)",
     category: "Finance",
     description:
-      "Financial institutions must train their employees on new products and strict regulations. Bank managers require consistent communication across many regional branches, so they use digital modules. CPUTEK delivers technical learning content and accurate financial awareness videos.",
+      "Financial institutions must train their employees on new products and strict regulations. Bank managers require consistent communication across many regional branches, so they use digital modules. CPUTEK delivers technical learning content and accurate financial awareness videos.We build technical training programs for banking organizations, and these digital videos help retail bankers understand anti-money laundering laws.",
     overview:
       "Financial institutions must train their employees on new products and strict regulations. Bank managers require consistent communication across many regional branches, so they use digital modules. CPUTEK delivers technical learning content and accurate financial awareness videos. We build technical training programs for banking organizations, and these digital videos help retail bankers understand anti-money laundering laws.",
     keyFeatures: [
@@ -310,7 +310,7 @@ export const industriesData = [
     title: "Education & EdTech",
     category: "Education",
     description:
-      "Educational institutions require digital content for their daily classroom activities. School administrators need materials that simplify very complex scientific concepts, so they seek interactive modules. CPUTEK develops interactive eLearning courses and exact animated educational videos.",
+      "Educational institutions require digital content for their daily classroom activities. School administrators need materials that simplify very complex scientific concepts, so they seek interactive modules. CPUTEK develops interactive eLearning courses and exact animated educational videos.We build curriculum-based educational resources for universities, and our digital instructional videos help teachers maintain student focus.",
     overview:
       "Educational institutions require digital content for their daily classroom activities. School administrators need materials that simplify very complex scientific concepts, so they seek interactive modules. CPUTEK develops interactive eLearning courses and exact animated educational videos. We build curriculum-based educational resources for universities, and our digital instructional videos help teachers maintain student focus.",
     keyFeatures: [
@@ -412,7 +412,7 @@ export const industriesData = [
     title: "Retail & E-Commerce",
     category: "Retail",
     description:
-      "Retail organizations need to train their employees across many different geographical locations. Store managers demand a consistent customer experience and deep product knowledge, so they require standardized materials. CPUTEK creates product demonstration videos and exact sales enablement content.",
+      "Retail organizations need to train their employees across many different geographical locations. Store managers demand a consistent customer experience and deep product knowledge, so they require standardized materials. CPUTEK creates product demonstration videos and exact sales enablement content.We build customer engagement assets for retail businesses, and these promotional videos help franchise owners train new cashiers.",
     overview:
       "Retail organizations need to train their employees across many different geographical locations. Store managers demand a consistent customer experience and deep product knowledge, so they require standardized materials. CPUTEK creates product demonstration videos and exact sales enablement content. We build customer engagement assets for retail businesses, and these promotional videos help franchise owners train new cashiers.",
     keyFeatures: [
@@ -514,7 +514,7 @@ export const industriesData = [
     title: "Pharmaceuticals & Life Sciences",
     category: "Life Sciences",
     description:
-      "Pharmaceutical companies require high-quality scientific communication for their daily operations. Laboratory managers must educate employees and healthcare professionals regularly, so they use visual aids. CPUTEK simplifies complex pharmaceutical concepts into engaging visual experiences.",
+      "Pharmaceutical companies require high-quality scientific communication for their daily operations. Laboratory managers must educate employees and healthcare professionals regularly, so they use visual aids. CPUTEK simplifies complex pharmaceutical concepts into engaging visual experiences.We build drug mechanism animations and detailed product launch videos. Our medical animations support clinical education, and they improve pharmacovigilance awareness.",
     overview:
       "Pharmaceutical companies require high-quality scientific communication for their daily operations. Laboratory managers must educate employees and healthcare professionals regularly, so they use visual aids. CPUTEK simplifies complex pharmaceutical concepts into engaging visual experiences. We build drug mechanism animations and detailed product launch videos. Our medical animations support clinical education, and they improve pharmacovigilance awareness.",
     keyFeatures: [
@@ -616,7 +616,7 @@ export const industriesData = [
     title: "Government & Public Sector",
     category: "Public Sector",
     description:
-      "Government departments require multilingual digital learning and broad public awareness campaigns. Public administrators must reach local employees and citizens quickly, so they need accessible digital formats. CPUTEK supports government initiatives through technical educational content and accurate awareness videos.",
+      "Government departments require multilingual digital learning and broad public awareness campaigns. Public administrators must reach local employees and citizens quickly, so they need accessible digital formats. CPUTEK supports government initiatives through technical educational content and accurate awareness videos.We build multilingual learning materials and clear digital communication assets. These capacity-building programs help public agencies deliver training, and they improve digital literacy.",
     overview:
       "Government departments require multilingual digital learning and broad public awareness campaigns. Public administrators must reach local employees and citizens quickly, so they need accessible digital formats. CPUTEK supports government initiatives through technical educational content and accurate awareness videos. We build multilingual learning materials and clear digital communication assets. These capacity-building programs help public agencies deliver training, and they improve digital literacy.",
     keyFeatures: [
@@ -718,7 +718,7 @@ export const industriesData = [
     title: "Energy & Utilities",
     category: "Energy",
     description:
-      "Energy companies operate in high-risk environments with strict safety requirements. Plant supervisors demand operational excellence and perfect regulatory compliance, so they mandate visual training. CPUTEK creates industrial safety content and detailed technical learning materials.",
+      "Energy companies operate in high-risk environments with strict safety requirements. Plant supervisors demand operational excellence and perfect regulatory compliance, so they mandate visual training. CPUTEK creates industrial safety content and detailed technical learning materials.We build operational training assets for heavy infrastructure organizations. These emergency response training videos help utility companies, and they prevent serious workplace accidents.",
     overview:
       "Energy companies operate in high-risk environments with strict safety requirements. Plant supervisors demand operational excellence and perfect regulatory compliance, so they mandate visual training. CPUTEK creates industrial safety content and detailed technical learning materials. We build operational training assets for heavy infrastructure organizations. These emergency response training videos help utility companies, and they prevent serious workplace accidents.",
     keyFeatures: [
@@ -820,7 +820,7 @@ export const industriesData = [
     title: "NGOs & Development Sector",
     category: "Non-Profit",
     description:
-      "Development organizations need digital tools to train their local field staff. Program directors must educate volunteers and rural community members, so they rely on scalable digital modules. CPUTEK partners with international development agencies and social impact organizations.",
+      "Development organizations need digital tools to train their local field staff. Program directors must educate volunteers and rural community members, so they rely on scalable digital modules. CPUTEK partners with international development agencies and social impact organizations.We develop multilingual learning content and accurate agricultural extension training. These educational animations help non-governmental organizations, and they support local health awareness campaigns.",
     overview:
       "Development organizations need digital tools to train their local field staff. Program directors must educate volunteers and rural community members, so they rely on scalable digital modules. CPUTEK partners with international development agencies and social impact organizations. We develop multilingual learning content and accurate agricultural extension training. These educational animations help non-governmental organizations, and they support local health awareness campaigns.",
     keyFeatures: [

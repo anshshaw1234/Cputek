@@ -5,6 +5,7 @@ import { Sparkles } from 'lucide-react';
 
 const ProductCard = ({ product, index }) => {
   const navigate = useNavigate();
+  const ProductIcon = product.icon;
 
   return (
     <motion.div
@@ -24,7 +25,7 @@ const ProductCard = ({ product, index }) => {
         </div>
         
         <div className="mb-6 inline-flex p-4 rounded-xl bg-white/5 border border-white/10 text-primary relative z-10 group-hover:scale-110 smooth-transition">
-          {product.icon}
+          <ProductIcon className="w-8 h-8" />
         </div>
         
         <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary smooth-transition relative z-10">
