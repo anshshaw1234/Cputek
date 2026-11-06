@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="generator" content="Hostinger Horizons" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hostinger Horizons</title>
+
+		<!-- Apollo Visitor Tracking Initialization -->
+		<script>
+			window.apolloTracking = window.apolloTracking || function() {
+				(window.apolloTracking.q = window.apolloTracking.q || []).push(arguments);
+			};
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); 
+				js.id = id;
+				js.async = true;
+				// This assumes the standard Apollo tracking JS endpoint. Update if a specific one was provided.
+				js.src = "https://assets.apollo.io/js/tracking.js"; 
+				js.onload = function() {
+					if (window.apolloTracking && typeof window.apolloTracking.init === 'function') {
+						// Initialize with the Apollo App ID (Replace 'YOUR_APOLLO_APP_ID' with actual ID)
+						window.apolloTracking.init("YOUR_APOLLO_APP_ID");
+					}
+				};
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'apollo-tracking'));
+		</script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="module" src="/src/main.jsx"></script>
+	</body>
+</html>

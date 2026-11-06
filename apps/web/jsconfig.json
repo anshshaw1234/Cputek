@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"typeRoots": ["../../node_modules/@types"],
+		"types": ["node", "react", "react-dom"],
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	"typeAcquisition": {
+		"enable": false
+	},
+	"include": ["src"]
+}
